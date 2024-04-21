@@ -4,9 +4,10 @@ const features = [
   {
     id: 1,
     icon: "fa-users",
-    count: 3453,
+    count: 1234,
     title: "Happy Customers",
-    description: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit",
+    description:
+      "Happy customers enjoy enhanced satisfaction, driving loyalty and positive referrals.",
     delay: "0.1s",
   },
   {
@@ -14,7 +15,8 @@ const features = [
     icon: "fa-check",
     count: 4234,
     title: "Project Done",
-    description: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit",
+    description:
+      "Projects completed successfully, showcasing efficiency and expertise.",
     delay: "0.3s",
   },
   {
@@ -22,7 +24,8 @@ const features = [
     icon: "fa-award",
     count: 3123,
     title: "Awards Win",
-    description: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit",
+    description:
+      "Awards won reflect recognition for excellence and innovation.",
     delay: "0.5s",
   },
   {
@@ -30,7 +33,8 @@ const features = [
     icon: "fa-users-cog",
     count: 1831,
     title: "Expert Workers",
-    description: "Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit",
+    description:
+      "Expert workers demonstrate skilled professionalism and high-quality results.",
     delay: "0.7s",
   },
 ];

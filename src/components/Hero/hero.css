@@ -33,7 +33,7 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
-  background-image: linear-gradient(to top, #000 40%, transparent);
+  background-image: linear-gradient(to top, #000 30%, transparent);
 }
 
 .slider .list .item .content {
@@ -87,7 +87,7 @@ body {
 
 .thumbnail {
   position: absolute;
-  bottom: 90px;
+  bottom: 40px;
   z-index: 11;
   display: flex;
   gap: 10px;
@@ -141,14 +141,14 @@ body {
   }
 }
 
-.center{
+.center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-.down{
+.down {
   position: relative;
   width: 50px;
   height: 80px;

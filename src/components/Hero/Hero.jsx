@@ -14,27 +14,28 @@ const data = [
   "Green Hydrogen",
   "BESS",
 ];
+const content = [
+  "Wind energy is a clean, renewable power source harnessed by wind turbines that convert the kinetic energy of wind into electricity. This sustainable energy solution reduces reliance on fossil fuels and emits no greenhouse gases during operation, helping to mitigate climate change.",
+  "Solar energy harnesses the power of the sun through photovoltaic cells or solar thermal systems, converting sunlight directly into electricity or heat. This abundant and sustainable energy source significantly reduces carbon footprints and promotes energy independence by providing a clean, inexhaustible supply of power.",
+  "Hybrid energy systems combine multiple renewable energy sources, such as wind and solar power, to maximize efficiency and ensure a more consistent energy supply. By integrating various technologies, these systems can provide reliable power while reducing environmental impact and enhancing energy security.",
+  "Green hydrogen is produced using renewable energy sources to power the electrolysis of water, splitting it into hydrogen and oxygen without emitting carbon dioxide. This sustainable fuel offers a versatile solution for decarbonizing various sectors, including transportation and industry, and plays a crucial role in advancing the global transition to clean energy.",
+  "Battery Energy Storage Systems (BESS) are crucial for managing energy flow and enhancing reliability within the power grid by storing excess electricity generated from renewable sources. These systems enable utilities to balance supply and demand, provide backup power, and support the integration of intermittent renewable energy sources like solar and wind.",
+];
 
 const Hero = () => {
   const [itemActive, setItemActive] = useState(0);
-  const [refreshInterval, setRefreshInterval] = useState(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       handleClickNext();
     }, 7000);
-    setRefreshInterval(intervalId);
+
+    // Cleanup the interval on component unmount
     return () => clearInterval(intervalId);
   }, []);
 
   const handleClickNext = () => {
     setItemActive((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const handleClickPrev = () => {
-    setItemActive(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
   };
 
   const handleThumbnailClick = (index) => {
@@ -49,15 +50,11 @@ const Hero = () => {
             key={index}
             className={`item ${index === itemActive ? "active" : ""}`}
           >
-            <img alt="image" src={image} />
+            <img alt="backg" src={image} />
             <div className="content">
-              <p>Design</p>
+              <p>Sector</p>
               <h2>{data[index]}</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Temporibus est, facilis exercitationem hic dolorum quam
-                similique.
-              </p>
+              <p>{content[index]}</p>
             </div>
           </div>
         ))}
@@ -69,10 +66,8 @@ const Hero = () => {
             className={`item ${index === itemActive ? "active" : ""}`}
             onClick={() => handleThumbnailClick(index)}
           >
-            <img alt="image" src={image} />
-            <div className="content" key={index}>
-              {data[index]}
-            </div>
+            <img alt="thumbnail" src={image} />
+            <div className="content">{data[index]}</div>
           </div>
         ))}
       </div>

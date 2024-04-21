@@ -13,60 +13,66 @@ const services = [
   {
     id: 1,
     image: image1,
+    to: "/solar",
     icon: "fa-solar-panel",
     title: "Solar Energy",
     description:
-      "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.",
+      "Solar energy harnesses the power of the sun through photovoltaic cells or solar thermal systems, converting sunlight directly into electricity or heat.",
     delay: "0.1s",
   },
   {
     id: 2,
     image: image2,
+    to: "/wind",
     icon: "fa-wind",
     title: "Wind Energy",
     description:
-      "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.",
+      "Wind energy is a clean, renewable power source harnessed by wind turbines that convert the kinetic energy of wind into electricity.",
     delay: "0.3s",
   },
   {
     id: 3,
     image: image3,
+    to: "/hybrid",
     icon: "fa-lightbulb",
     title: "Hybrid Energy",
     description:
-      "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.",
+      "Hybrid energy systems combine multiple renewable energy sources, such as wind and solar power, to maximize efficiency and ensure a more consistent energy supply.",
     delay: "0.5s",
   },
   {
     id: 4,
     image: image4,
+    to: "/bess",
     icon: "fa-solar-panel",
     title: "BESS",
     description:
-      "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.",
+      "Battery Energy Storage Systems (BESS) are crucial for managing energy flow and enhancing reliability within the power grid by storing excess electricity generated from renewable sources.",
     delay: "0.1s",
   },
   {
     id: 5,
     image: image5,
+    to: "/green",
     icon: "fa-wind",
     title: "Green Hydrogen",
     description:
-      "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.",
+      "Green hydrogen is produced using renewable energy sources to power the electrolysis of water, splitting it into hydrogen and oxygen without emitting carbon dioxide.",
     delay: "0.3s",
   },
   {
     id: 6,
     image: image6,
+    to: "/nearshore",
     icon: "fa-lightbulb",
     title: "Nearshore/Offshore",
     description:
-      "Stet stet justo dolor sed duo. Ut clita sea sit ipsum diam lorem diam.",
+      "Nearshore and offshore outsourcing involves delegating business processes to companies in nearby or distant countries, respectively, often to capitalize on lower costs and access specialized skills.",
     delay: "0.5s",
   },
 ];
 
-const ServiceItem = ({ image, icon, title, description, delay }) => {
+const ServiceItem = ({ image, to, icon, title, description, delay }) => {
   return (
     <div className={`col-md-6 col-lg-4 wow fadeInUp`} data-wow-delay={delay}>
       <div className="service-item rounded overflow-hidden">
@@ -77,11 +83,8 @@ const ServiceItem = ({ image, icon, title, description, delay }) => {
           </div>
           <h4 className="mb-3">{title}</h4>
           <p>{description}</p>
-          <Link
-            className="small fw-medium"
-            to={`/${title.replace(/\s+/g, "-").toLowerCase()}`}
-          >
-            Read More
+          <Link className="small fw-medium" to={to}>
+            Learn More
             <i className="fa fa-arrow-right ms-2" />
           </Link>
         </div>

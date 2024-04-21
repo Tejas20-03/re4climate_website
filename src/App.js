@@ -8,6 +8,8 @@ import Feature from "./components/Features/Feature";
 import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 import AboutUs from "./components/AboutUs/AboutUs";
+import Maintenance from "./components/Maintenance/Maintenance";
+import BackToTop from "./components/BackToTop/BackToTop";
 
 function App() {
   return (
@@ -17,14 +19,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route
-            index
             element={
               <>
                 <Hero />
                 <Feature />
-                <section id="about">
-                  <About />
-                </section>
+                <About />
                 <Services />
               </>
             }
@@ -32,7 +31,15 @@ function App() {
           ></Route>
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/aboutUs" element={<AboutUs />}></Route>
+          <Route path="/wind" element={<Maintenance />}></Route>
+          <Route path="/solar" element={<Maintenance />}></Route>
+          <Route path="/hybrid" element={<Maintenance />}></Route>
+          <Route path="/bess" element={<Maintenance />}></Route>
+          <Route path="/green" element={<Maintenance />}></Route>
+          <Route path="/nearshore" element={<Maintenance />}></Route>
+          <Route path="/service" element={<Maintenance />}></Route>
         </Routes>
+        <BackToTop/>
         <Footer />
       </BrowserRouter>
     </>

@@ -15,17 +15,13 @@ const footerData = {
     email: "info@re4climate.com",
   },
   links: [
-    { to: "/", label: "About Us" },
-    { to: "/", label: "Contact Us" },
-    { to: "/", label: "Our Services" },
-    { to: "/", label: "Terms & Condition" },
-    { to: "/", label: "Support" },
+    { to: "/aboutUs", label: "About Us" },
+    { to: "/contact", label: "Contact Us" },
+    { to: "/service", label: "Our Services" },
   ],
   socialLinks: [
-    { to: "/", icon: "twitter" },
     { to: "/", icon: "facebook-f" },
-    { to: "/", icon: "youtube" },
-    { to: "/", icon: "linkedin-in" },
+    { to: "https://www.linkedin.com/company/re4climate", icon: "linkedin-in" },
   ],
   galleryImages: [Gallery1, Gallery2, Gallery3, Gallery4, Gallery5, Gallery6],
 };
@@ -87,7 +83,7 @@ const Footer = () => {
                   <img
                     className="img-fluid rounded"
                     src={image}
-                    alt={`Gallery image ${index + 1}`}
+                    alt={`Gallery ${index + 1}`}
                   />
                 </div>
               ))}

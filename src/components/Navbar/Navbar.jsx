@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Logo from "../../assets/logo.png";
 
 const Navbar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
@@ -19,7 +20,7 @@ const Navbar = () => {
           className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"
           onClick={handleNavCollapse}
         >
-          RE4Climate
+          <img src={Logo} alt="logo" style={{ height: "60px" }} />
         </NavLink>
         <button
           type="button"
@@ -39,19 +40,18 @@ const Navbar = () => {
           <div className="navbar-nav ms-auto p-4 p-lg-0">
             <NavLink
               to="/"
-              exact
               className="nav-item nav-link"
               onClick={handleNavCollapse}
             >
               Home
             </NavLink>
-            <a
-              href="#about"
+            <NavLink
+              to="/aboutUs"
               className="nav-item nav-link"
               onClick={handleNavCollapse}
             >
               About
-            </a>
+            </NavLink>
             <NavLink
               to="/service"
               className="nav-item nav-link"
@@ -60,13 +60,13 @@ const Navbar = () => {
               Service
             </NavLink>
             <div className="nav-item dropdown">
-              <a
-                href="#"
+              <NavLink
+                to="/sector"
                 className="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
               >
                 Sector
-              </a>
+              </NavLink>
               <div className="dropdown-menu bg-light m-0">
                 <NavLink
                   to="/wind"

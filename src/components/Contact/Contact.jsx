@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import background from "../../assets/quote.jpg";
 
 const ContactForm = () => {
   return (
@@ -72,6 +71,7 @@ const GoogleMap = () => {
       allowFullScreen
       aria-hidden="false"
       tabIndex="0"
+      title="Re4Climate"
     />
   );
 };
