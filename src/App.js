@@ -10,6 +10,7 @@ import Contact from "./components/Contact/Contact";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Maintenance from "./components/Maintenance/Maintenance";
 import BackToTop from "./components/BackToTop/BackToTop";
+import SideContact from "./components/SideContact/SideContact";
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
           <Route path="/nearshore" element={<Maintenance />}></Route>
           <Route path="/service" element={<Maintenance />}></Route>
         </Routes>
-        <BackToTop/>
+        <SideContact />
+        <BackToTop />
         <Footer />
       </BrowserRouter>
     </>
