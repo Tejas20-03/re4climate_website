@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 // Separate styles for easier maintenance
 const styles = {
   imageContainer: {
-    minHeight: 400,
+    position: 'absolute', // Positioning it absolutely
+    width: '100%',        // Ensure it takes full width
+    top: '-100px',        // Adjust this value based on your exact needs
+    zIndex: 10            // Ensure it's above the other content
   },
   imageStyle: {
     objectFit: "cover",
+    width: '100%',        // Make sure it covers the entire container
+    height: '100%'        // Make sure it covers the entire container
   },
 };
 

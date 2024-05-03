@@ -15,11 +15,11 @@ const data = [
   "BESS",
 ];
 const content = [
-  "Wind energy is a clean, renewable power source harnessed by wind turbines that convert the kinetic energy of wind into electricity. This sustainable energy solution reduces reliance on fossil fuels and emits no greenhouse gases during operation, helping to mitigate climate change.",
-  "Solar energy harnesses the power of the sun through photovoltaic cells or solar thermal systems, converting sunlight directly into electricity or heat. This abundant and sustainable energy source significantly reduces carbon footprints and promotes energy independence by providing a clean, inexhaustible supply of power.",
-  "Hybrid energy systems combine multiple renewable energy sources, such as wind and solar power, to maximize efficiency and ensure a more consistent energy supply. By integrating various technologies, these systems can provide reliable power while reducing environmental impact and enhancing energy security.",
-  "Green hydrogen is produced using renewable energy sources to power the electrolysis of water, splitting it into hydrogen and oxygen without emitting carbon dioxide. This sustainable fuel offers a versatile solution for decarbonizing various sectors, including transportation and industry, and plays a crucial role in advancing the global transition to clean energy.",
-  "Battery Energy Storage Systems (BESS) are crucial for managing energy flow and enhancing reliability within the power grid by storing excess electricity generated from renewable sources. These systems enable utilities to balance supply and demand, provide backup power, and support the integration of intermittent renewable energy sources like solar and wind.",
+  "This sustainable energy solution reduces reliance on fossil fuels and emits no greenhouse gases during operation, helping to mitigate climate change.",
+  "This abundant and sustainable energy source significantly reduces carbon footprints and promotes energy independence by providing a clean, inexhaustible supply of power.",
+  "By integrating various technologies, these systems can provide reliable power while reducing environmental impact and enhancing energy security.",
+  "This sustainable fuel offers a versatile solution for decarbonizing various sectors, including transportation and industry, and plays a crucial role in advancing the global transition to clean energy.",
+  "These systems enable utilities to balance supply and demand, provide backup power, and support the integration of intermittent renewable energy sources like solar and wind.",
 ];
 
 const Hero = () => {

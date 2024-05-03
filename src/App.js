@@ -4,13 +4,13 @@ import Navbar from "./components/Navbar/Navbar";
 import Topbar from "./components/Topbar/Topbar";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
-import Feature from "./components/Features/Feature";
 import Services from "./components/Services/Services";
 import Contact from "./components/Contact/Contact";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Maintenance from "./components/Maintenance/Maintenance";
 import BackToTop from "./components/BackToTop/BackToTop";
 import SideContact from "./components/SideContact/SideContact";
+import Chatbot from "./components/Chatbot/Chatbot";
 
 function App() {
   return (
@@ -23,7 +23,6 @@ function App() {
             element={
               <>
                 <Hero />
-                <Feature />
                 <About />
                 <Services />
               </>
@@ -39,8 +38,10 @@ function App() {
           <Route path="/green" element={<Maintenance />}></Route>
           <Route path="/nearshore" element={<Maintenance />}></Route>
           <Route path="/service" element={<Maintenance />}></Route>
+          {/* <Route path="/chatbot" element={<Chatbot/>}></Route> */}
         </Routes>
         <SideContact />
+        <Chatbot/>
         <BackToTop />
         <Footer />
       </BrowserRouter>

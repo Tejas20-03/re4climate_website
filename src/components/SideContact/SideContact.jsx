@@ -17,7 +17,7 @@ const SideContact = () => {
         top: "45%",
         right: "-68px",
         lineHeight: "44px",
-        zIndex: "99",
+        zIndex: "10",
         transform: "rotate(-90deg)",
         boxShadow: "0 10px 35px #00000025",
         background: "#ffae12",

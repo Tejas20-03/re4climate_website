@@ -37,6 +37,7 @@ const BackToTop = () => {
       href="#"
       className="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top p-2"
       aria-label="Back to top"
+      style={{ bottom: "10px", right: "10px" }}
       onClick={scrollToTop}
     >
       <i className="bi bi-arrow-up" />
