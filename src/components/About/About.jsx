@@ -1,75 +1,93 @@
 import React from "react";
-import aboutImage from "../../assets/about.jpg";
-import { Link } from "react-router-dom";
+import { Carousel, Container, Row, Col } from "react-bootstrap";
+import image1 from "../../assets/image1.jpg";
+import image2 from "../../assets/image2.jpg";
+import image3 from "../../assets/image5.jpg";
+import image4 from "../../assets/image6.png";
+import image5 from "../../assets/image7.jpeg";
 
-// Separate styles for easier maintenance
-const styles = {
-  imageContainer: {
-    position: 'absolute', // Positioning it absolutely
-    width: '100%',        // Ensure it takes full width
-    top: '-100px',        // Adjust this value based on your exact needs
-    zIndex: 10            // Ensure it's above the other content
-  },
-  imageStyle: {
-    objectFit: "cover",
-    width: '100%',        // Make sure it covers the entire container
-    height: '100%'        // Make sure it covers the entire container
-  },
-};
-
-const About = () => {
+function About() {
   return (
-    <div className="container-fluid bg-light overflow-hidden my-5 px-lg-0">
-      <div className="container about px-lg-0">
-        <div className="row g-0 mx-lg-0">
-          <div className="col-lg-6 ps-lg-0" style={styles.imageContainer}>
-            <div className="position-relative h-100">
-              <img
-                className="position-absolute img-fluid w-100 h-100"
-                src={aboutImage}
-                style={styles.imageStyle}
-                alt="Office setting with RE4Climate team working on renewable energy projects"
-              />
-            </div>
-          </div>
-          <div
-            className="col-lg-6 about-text py-5 wow fadeIn"
-            data-wow-delay="0.5s"
-          >
-            <div className="p-lg-5 pe-lg-0">
-              <h6 className="text-primary">About Us</h6>
-              <h1 className="mb-4">
-                5+ Years Experience In Solar & Renewable Energy Industry
-              </h1>
-              <p>
-                RE4Climate, founded in early 2021, is a pioneering entity
-                committed to driving impactful change in the renewable energy
-                sector. With a robust portfolio of services, we specialize in
-                offering comprehensive solutions aimed at fostering sustainable
-                development and mitigating climate change challenges.
-              </p>
-              {[
-                "Innovation and Excellence",
-                "Expertise and Experience",
-                "Comprehensive Solutions",
-              ].map((item, index) => (
-                <p key={index}>
-                  <i className="fa fa-check-circle text-primary me-3" />
-                  {item}
+    <Container fluid className="px-2px">
+      <Row className="align-items-center">
+        <Col
+          md={6}
+          style={{
+            paddingLeft: 0,
+            paddingRight: 0,
+            position: "absolute",
+            bottom: "-45%",
+          }}
+          className="aboveHero border border-5 border-light-subtle"
+        >
+          <Carousel>
+            <Carousel.Item>
+              <img className="d-block w-100" src={image1} alt="First slide" />
+              <Carousel.Caption>
+                <h3>First slide label</h3>
+                <p>
+                  Nulla vitae elit libero, a pharetra augue mollis interdum.
                 </p>
-              ))}
-              <Link
-                to="/aboutUs"
-                className="btn btn-primary rounded-pill py-3 px-5 mt-3"
-              >
-                Explore More
-              </Link>
-            </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={image2} alt="Second slide" />
+              <Carousel.Caption>
+                <h3>Second slide label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={image3} alt="Third slide" />
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={image4} alt="Third slide" />
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={image5} alt="Third slide" />
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        </Col>
+        <Col md={6} style={{ paddingRight: "10px" }}>
+          <div>
+            <h2>Welcome to Our Website</h2>
+            <p>
+              This section can be used to introduce visitors to your website,
+              explain what your site offers, or provide any information you
+              consider important. Here, you can talk about your mission, vision,
+              and values or introduce new products and announcements.
+            </p>
+            <p>
+              Ensure that the text complements the images and adds value to the
+              visitor's experience, enhancing both the visual elements and the
+              message conveyed.
+            </p>
           </div>
-        </div>
-      </div>
-    </div>
+        </Col>
+      </Row>
+    </Container>
   );
-};
+}
 
 export default About;

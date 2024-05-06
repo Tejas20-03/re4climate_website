@@ -1,129 +1,79 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Logo from "../../assets/logo.png";
+import "./style.css";
 
-const Navbar = () => {
-  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
+const UNavbar = () => {
+  const [navBackground, setNavBackground] = useState("transparent");
 
-  const handleNavCollapse = () => {
-    setIsNavCollapsed(true); // This will always collapse the navbar on click
+  const handleScroll = () => {
+    if (window.innerWidth < 768) return;
+    window.scrollY > 50
+      ? setNavBackground("rgba(0, 0, 0, 0.5)")
+      : setNavBackground("transparent");
   };
 
+  useEffect(() => {
+    window.addEventListener("resize", handleScroll);
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("resize", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <>
-      <nav
-        className="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
-        style={{ position: "sticky", top: 0, zIndex: 1020 }}
-      >
-        <NavLink
-          to="/"
-          className="navbar-brand d-flex align-items-center border-end px-4 px-lg-5"
-          onClick={handleNavCollapse}
-        >
-          <img src={Logo} alt="logo" style={{ height: "60px" }} />
-        </NavLink>
-        <button
-          type="button"
-          className="navbar-toggler me-4"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarCollapse"
-          aria-expanded={!isNavCollapsed}
-          aria-controls="navbarCollapse"
-          onClick={() => setIsNavCollapsed(!isNavCollapsed)}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div
-          className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse`}
-          id="navbarCollapse"
-        >
-          <div className="navbar-nav ms-auto p-4 p-lg-0">
-            <NavLink
-              to="/"
-              className="nav-item nav-link"
-              onClick={handleNavCollapse}
-            >
+    <Navbar
+      style={{ backgroundColor: navBackground }}
+      expand="lg"
+      fixed="top"
+      className="custom-navbar"
+    >
+      <Container>
+        <Navbar.Brand href="/">
+          <img src={Logo} alt="logo" style={{ height: "70px" }} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link href="/" style={{ color: "white" }}>
               Home
-            </NavLink>
-            <NavLink
-              to="/aboutUs"
-              className="nav-item nav-link"
-              onClick={handleNavCollapse}
-            >
+            </Nav.Link>
+            <Nav.Link href="/about" style={{ color: "white" }}>
               About
-            </NavLink>
-            <NavLink
-              to="/service"
-              className="nav-item nav-link"
-              onClick={handleNavCollapse}
+            </Nav.Link>
+            <Nav.Link href="/services" style={{ color: "white" }}>
+              Services
+            </Nav.Link>
+            <NavDropdown
+              title="Sectors"
+              id="basic-nav-dropdown"
+              style={{ color: "white" }}
             >
-              Service
-            </NavLink>
-            <div className="nav-item dropdown">
-              <NavLink
-                to="/sector"
-                className="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
+              <NavDropdown.Item
+                href="/sectors/renewable"
+                style={{ color: "black" }}
               >
-                Sector
-              </NavLink>
-              <div className="dropdown-menu bg-light m-0">
-                <NavLink
-                  to="/wind"
-                  className="dropdown-item"
-                  onClick={handleNavCollapse}
-                >
-                  Wind Energy
-                </NavLink>
-                <NavLink
-                  to="/solar"
-                  className="dropdown-item"
-                  onClick={handleNavCollapse}
-                >
-                  Solar Energy
-                </NavLink>
-                <NavLink
-                  to="/hybrid"
-                  className="dropdown-item"
-                  onClick={handleNavCollapse}
-                >
-                  Hybrid Energy
-                </NavLink>
-                <NavLink
-                  to="/bess"
-                  className="dropdown-item"
-                  onClick={handleNavCollapse}
-                >
-                  BESS
-                </NavLink>
-                <NavLink
-                  to="/green"
-                  className="dropdown-item"
-                  onClick={handleNavCollapse}
-                >
-                  Green Hydrogen
-                </NavLink>
-                <NavLink
-                  to="/nearshore"
-                  className="dropdown-item"
-                  onClick={handleNavCollapse}
-                >
-                  Nearshore/Offshore
-                </NavLink>
-              </div>
-            </div>
-            <NavLink
-              to="/contact"
-              className="nav-item nav-link"
-              onClick={handleNavCollapse}
-            >
+                Renewable Energy
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                href="/sectors/solar"
+                style={{ color: "black" }}
+              >
+                Solar Energy
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="/careers" style={{ color: "white" }}>
+              Careers
+            </Nav.Link>
+            <Nav.Link href="/contact" style={{ color: "white" }}>
               Contact
-            </NavLink>
-          </div>
-        </div>
-      </nav>
-    </>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default UNavbar;

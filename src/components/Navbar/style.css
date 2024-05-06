@@ -1,0 +1,30 @@
+
+.custom-navbar .navbar-nav .nav-link,
+.custom-navbar .navbar-brand {
+  color: white !important;
+  font-size: 20px;
+}
+
+.custom-navbar .navbar-nav .dropdown-menu {
+  background-color: white;
+}
+
+@media (min-width: 992px) {
+  .custom-navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+.custom-navbar .navbar-collapse {
+  justify-content: flex-end; /* Align nav items to the right */
+}
+
+.custom-navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+@media (max-width: 767.98px) {
+  .custom-navbar {
+    background-color: rgb(0, 0, 0, 0.9) !important;
+  }
+}

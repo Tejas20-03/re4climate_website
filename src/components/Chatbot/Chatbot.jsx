@@ -3,12 +3,26 @@ import "./chatbot.css";
 
 const Chatbot = () => {
   const qaPairs = {
-    /* ... predefined Q&A pairs ... */
+    hello: "Hello! How can I help you today?",
+    "how are you": "I'm a bot, but thank you for asking! How can I assist you?",
+    "what is your name":
+      "I am RE4Climate Bot. What would you like to know more about?",
+    "help me": "Sure, please tell me more about what you need help with.",
+    "climate change":
+      "Climate change refers to long-term shifts and alterations in temperatures and weather patterns...",
   };
+
   const [messages, setMessages] = useState([
     { id: 1, text: "Hi there, How can I help you today?", type: "incoming" },
   ]);
   const [currentMessage, setCurrentMessage] = useState("");
+  const [suggestedQuestions, setSuggestedQuestions] = useState([
+    "Hello",
+    "How are you?",
+    "What is your name?",
+    "Help me",
+    "What is climate change?",
+  ]);
   const [isVisible, setIsVisible] = useState(false);
   const messagesEndRef = useRef(null);
 
@@ -16,29 +30,63 @@ const Chatbot = () => {
     setCurrentMessage(e.target.value);
   };
 
-  const sendMessage = () => {
-    if (currentMessage.trim() !== "") {
+  const sendMessage = (messageText = currentMessage) => {
+    if (messageText.trim() !== "") {
       const newMessage = {
         id: messages.length + 1,
-        text: currentMessage,
+        text: messageText,
         type: "outgoing",
       };
-      const responseText = generateResponse(currentMessage);
+      const responseText = generateResponse(messageText);
       const newResponse = {
         id: messages.length + 2,
         text: responseText,
         type: "incoming",
       };
-      setMessages([...messages, newMessage, newResponse]);
+
+      setMessages((prevMessages) => [...prevMessages, newMessage, newResponse]);
       setCurrentMessage("");
+      updateSuggestions(messageText);
     }
   };
 
   const generateResponse = (input) => {
     const lowerInput = input.toLowerCase();
-    return Object.keys(qaPairs).find((key) => lowerInput.includes(key))
-      ? qaPairs[lowerInput]
+    const responseKey = Object.keys(qaPairs).find((key) =>
+      lowerInput.includes(key)
+    );
+    return responseKey
+      ? qaPairs[responseKey]
       : "Sorry, I don't understand that. Can you try asking something else?";
+  };
+
+  const updateSuggestions = (lastUserMessage) => {
+    let newSuggestions = [];
+    const messageLower = lastUserMessage.toLowerCase();
+
+    if (messageLower.includes("hello")) {
+      newSuggestions = [
+        "Effects of climate change",
+        "How to prevent climate change?",
+        "Climate change policies",
+      ];
+    } else if (messageLower.includes("help")) {
+      newSuggestions = [
+        "Contact support",
+        "Troubleshooting tips",
+        "User guides",
+      ];
+    } else {
+      newSuggestions = [
+        "Hello",
+        "How are you?",
+        "What is your name?",
+        "Help me",
+        "What is climate change?",
+      ];
+    }
+
+    setSuggestedQuestions(newSuggestions);
   };
 
   const handleKeyPress = (e) => {
@@ -49,7 +97,7 @@ const Chatbot = () => {
   };
 
   const toggleChatbot = () => {
-    setIsVisible(!isVisible);
+    setIsVisible((isVisible) => !isVisible);
   };
 
   useEffect(() => {
@@ -62,22 +110,15 @@ const Chatbot = () => {
 
   return (
     <div className="show-chatbot">
-      <button
-        className="chatbot-toggle"
-        onClick={() => {
-          toggleChatbot();
-        }}
-      >
-        {isVisible ? (
-          <span className="material-symbols-outlined">close</span>
-        ) : (
-          <span className="material-symbols-outlined">mode_comment</span>
-        )}
+      <button className="chatbot-toggle" onClick={toggleChatbot}>
+        <span className="material-symbols-outlined">
+          {isVisible ? "close" : "mode_comment"}
+        </span>
       </button>
       {isVisible && (
         <div className="chatbot">
           <header>
-            <h2>RE4Climate</h2>
+            <h2>RE4Climate Assistant</h2>
             <span className="material-symbols-outlined" onClick={toggleChatbot}>
               close
             </span>
@@ -91,6 +132,17 @@ const Chatbot = () => {
             ))}
             <div ref={messagesEndRef} />
           </ul>
+          <div className="suggestions">
+            {suggestedQuestions.map((question) => (
+              <button
+                key={question}
+                onClick={() => sendMessage(question)}
+                className="suggestion-chip"
+              >
+                {question}
+              </button>
+            ))}
+          </div>
           <div className="chat-input">
             <textarea
               placeholder="Enter a message..."
@@ -99,7 +151,12 @@ const Chatbot = () => {
               onChange={handleInputChange}
               onKeyPress={handleKeyPress}
             ></textarea>
-            <span className="material-symbols-outlined">send</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={() => sendMessage()}
+            >
+              send
+            </span>
           </div>
         </div>
       )}

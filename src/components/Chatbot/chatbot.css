@@ -8,10 +8,11 @@
   position: fixed;
   right: 40px;
   bottom: 95px; /* Increased space from bottom */
-  width: 50px;
+  height: 80px;
+  width: 80px;
   z-index: 1000; /* Ensure it's above other elements */
-  background: #724ae8;
   color: #fff;
+  background-color: rgb(24, 202, 78);
   border: none;
   display: flex;
   align-items: center;
@@ -42,8 +43,8 @@
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  right: 40px;
-  bottom: 145px; /* Adjust bottom placement */
+  right: 7%;
+  bottom: 15%; /* Adjust bottom placement */
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
@@ -58,15 +59,16 @@
 }
 
 .chatbot header {
-  background: #724ae8;
-  padding: 16px 0;
+  background: rgb(24, 202, 78);
+  padding: 10px 0;
   text-align: center;
   position: relative;
 }
 
 .chatbot header h2 {
+  font: bolder;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 .chatbot header span {
@@ -89,11 +91,29 @@
   display: flex;
 }
 
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+.suggestion-chip {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
 .chatbox .incoming span,
 .chatbox .outgoing span {
   height: 32px;
   width: 32px;
-  background: #724ae8;
+  background: rgb(24, 202, 78);
   color: #fff;
   align-self: flex-end;
   text-align: center;
@@ -113,7 +133,7 @@
   border-radius: 10px 10px 0 10px;
   color: #fff;
   font-size: 0.95rem;
-  background: #724ae8;
+  background: rgb(24, 202, 78);
 }
 
 .chatbox .incoming p {
@@ -147,7 +167,7 @@
   align-self: flex-end;
   height: 55px;
   line-height: 55px;
-  color: #724ae8;
+  color: rgb(24, 202, 78);
   font-size: 1.35rem;
   cursor: pointer; /* Updated to maintain consistency */
   visibility: visible; /* Updated for visibility */

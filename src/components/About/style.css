@@ -1,0 +1,5 @@
+.aboveHero {
+  position: relative; /* Positioned relative to its normal position */
+  bottom: 50%; /* Moves the bottom edge of the component up by 20% of its height */
+  z-index: 10; /* Ensures it sits on top of the elements that come after it */
+}

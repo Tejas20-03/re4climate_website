@@ -1,7 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Hero from "./components/Hero/Hero";
-import Navbar from "./components/Navbar/Navbar";
-import Topbar from "./components/Topbar/Topbar";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
 import Services from "./components/Services/Services";
@@ -11,20 +8,24 @@ import Maintenance from "./components/Maintenance/Maintenance";
 import BackToTop from "./components/BackToTop/BackToTop";
 import SideContact from "./components/SideContact/SideContact";
 import Chatbot from "./components/Chatbot/Chatbot";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Hero from "./components/Hero/Hero";
+import UNavbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Topbar />
-        <Navbar />
+        <UNavbar />
         <Routes>
           <Route
             element={
               <>
+                {/* <Hero /> */}
                 <Hero />
                 <About />
                 <Services />
+                <Portfolio />
               </>
             }
             path="/"
@@ -41,7 +42,7 @@ function App() {
           {/* <Route path="/chatbot" element={<Chatbot/>}></Route> */}
         </Routes>
         <SideContact />
-        <Chatbot/>
+        <Chatbot />
         <BackToTop />
         <Footer />
       </BrowserRouter>

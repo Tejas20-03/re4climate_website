@@ -1,0 +1,54 @@
+.hero-video {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-video video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .hero-video video {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-video {
+    padding-top: 50px; /* height of the navbar */
+    height: calc(100vh - 50px); /* reduce height to compensate for navbar */
+  }
+  .hero-video video {
+    object-fit: contain;
+  }
+}
+
+/* Additional tweaks for extreme aspect ratios */
+@media (aspect-ratio: 3/4) {
+  /* taller screens */
+  .hero-video video {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+@media (aspect-ratio: 16/9) {
+  /* very wide screens */
+  .hero-video video {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+}
