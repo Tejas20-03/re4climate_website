@@ -1,5 +1,19 @@
+.carousel-overlay {
+  position: absolute;
+  width: 100%;
+  top: -250px; /* Adjust this value to control how much the carousel overlaps the video */
+  z-index: 2; /* Ensures the carousel is above the video */
+  padding: 0 !important;
+}
+
 .aboveHero {
-  position: relative; /* Positioned relative to its normal position */
-  bottom: 50%; /* Moves the bottom edge of the component up by 20% of its height */
-  z-index: 10; /* Ensures it sits on top of the elements that come after it */
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .carousel-overlay {
+    position: static; /* Resets to normal flow, no overlap */
+    top: 0px; /* Removes negative spacing */
+  }
 }
