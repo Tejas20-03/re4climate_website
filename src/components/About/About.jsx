@@ -67,7 +67,7 @@ function About() {
           </Carousel>
         </Col>
         <Col xs={12} sm={12} md={4}>
-          <div style={{ paddingRight: "10px",marginBottom:"0" }}>
+          <div style={{ paddingRight: "10px", marginBottom: "0" }}>
             <h2 className="center-text">Growing strong over the years</h2>
             <p className="about-text">
               RE4Climate stands out as an engineering consultancy with a robust
