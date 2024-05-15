@@ -10,22 +10,21 @@ import SideContact from "./components/SideContact/SideContact";
 import Chatbot from "./components/Chatbot/Chatbot";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Hero from "./components/Hero/Hero";
-import UNavbar from "./components/Navbar/Navbar";
+import HNavbar from "./components/Navbar/Navbar";
+import ServicesSection from "./components/Services/Services";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <UNavbar />
+        <HNavbar />
         <Routes>
           <Route
             element={
               <>
-                {/* <Hero /> */}
                 <Hero />
                 <About />
-                <Services />
-                <Portfolio />
+                <ServicesSection />
               </>
             }
             path="/"
@@ -43,7 +42,6 @@ function App() {
         </Routes>
         <SideContact />
         <Chatbot />
-        <BackToTop />
         <Footer />
       </BrowserRouter>
     </>

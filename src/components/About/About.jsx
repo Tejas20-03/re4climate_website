@@ -67,14 +67,15 @@ function About() {
           </Carousel>
         </Col>
         <Col xs={12} sm={12} md={4}>
-          <div style={{ paddingRight: "10px" }}>
-            <h2>Welcome to Our Website</h2>
-            <p>
-              This section can be used to introduce visitors to your website,
-              explain what your site offers, or provide any information you
-              consider important.
+          <div style={{ paddingRight: "10px",marginBottom:"0" }}>
+            <h2 className="center-text">Growing strong over the years</h2>
+            <p className="about-text">
+              RE4Climate stands out as an engineering consultancy with a robust
+              technical foundation, offering comprehensive 360-degree services.
+              We are uniquely equipped to successfully deliver projects at any
+              point in the project life-cycle, ensuring seamless integration and
+              outstanding results.
             </p>
-            {/* More paragraphs */}
           </div>
         </Col>
       </Row>

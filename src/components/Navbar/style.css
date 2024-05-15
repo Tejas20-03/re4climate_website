@@ -1,12 +1,33 @@
-
 .custom-navbar .navbar-nav .nav-link,
 .custom-navbar .navbar-brand {
   color: white !important;
-  font-size: 20px;
+  font-size: 16px; /* Font size reduced for a cleaner look */
+  text-transform: uppercase; /* Keeps all navbar items uppercase */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds shadow to text for better visibility */
+}
+
+.custom-navbar .navbar-nav .nav-link {
+  border-right: 1px solid white; /* Adds a separator between navbar items */
+  padding-right: 25px; /* Increased padding for more space between items */
+  padding-left: 25px; /* Increased padding for more space between items */
+}
+
+.custom-navbar .navbar-nav .nav-link:last-child {
+  border-right: none; /* Removes the border for the last item */
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.2); /* Adds a hover effect */
 }
 
 .custom-navbar .navbar-nav .dropdown-menu {
   background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds shadow to the dropdown menu */
+}
+
+.custom-navbar .navbar-nav .dropdown-menu .nav-dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Hover effect for dropdown items */
 }
 
 @media (min-width: 992px) {
@@ -25,6 +46,14 @@
 
 @media (max-width: 767.98px) {
   .custom-navbar {
-    background-color: rgb(0, 0, 0, 0.9) !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
   }
+
+  .custom-navbar .navbar-nav .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.logo {
+  height: 80px; /* Increased logo size */
 }

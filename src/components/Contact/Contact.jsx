@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import contactImage from "../../assets/contact.jpg";
 const ContactForm = () => {
   return (
     <form>
@@ -81,7 +82,12 @@ const Contact = () => {
     <>
       <div
         className="container-fluid page-header py-5 mb-5"
-        style={{ backgroundColor: "#C0DEFF" }}
+        style={{
+          backgroundImage: `url(${contactImage})`, // Update the path as necessary
+          backgroundSize: "cover", // Ensures the background covers the whole area
+          backgroundPosition: "center", // Centers the background image
+          backgroundRepeat: "no-repeat", // Prevents the background from repeating
+        }}
       >
         <div className="container py-5">
           <h1 className="display-3 text-white mb-3 animated slideInDown">
