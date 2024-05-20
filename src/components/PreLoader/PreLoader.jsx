@@ -3,7 +3,8 @@ import "./preloader.css";
 import logo from "../../assets/logo.png";
 import { preLoaderAnim } from "../../animations";
 
-export default function PreLoader() {
+
+const PreLoader = () => {
   useEffect(() => {
     preLoaderAnim();
   }, []);
@@ -19,3 +20,5 @@ export default function PreLoader() {
     </div>
   );
 }
+
+export default PreLoader

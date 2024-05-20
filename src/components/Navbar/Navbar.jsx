@@ -8,15 +8,12 @@ const HNavbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setNavBackground("rgba(0, 0, 0, 0.5)");
-      } else {
-        setNavBackground("transparent");
-      }
+      setNavBackground(
+        window.scrollY > 50 ? "rgba(0, 0, 0, 0.5)" : "transparent"
+      );
     };
-
-    document.addEventListener("scroll", handleScroll);
-    return () => document.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -43,7 +40,9 @@ const HNavbar = () => {
               <NavDropdown.Item href="/hybrid">Hybrid Energy</NavDropdown.Item>
               <NavDropdown.Item href="/bess">BESS</NavDropdown.Item>
               <NavDropdown.Item href="/green">Green Hydrogen</NavDropdown.Item>
-              <NavDropdown.Item href="/nearshore">Nearshore/Offshore</NavDropdown.Item>
+              <NavDropdown.Item href="/nearshore">
+                Nearshore/Offshore
+              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="/careers">Careers</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>

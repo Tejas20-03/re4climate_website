@@ -3,18 +3,17 @@
   width: 100%;
   background: #000;
   color: #fff;
-  bottom: 0;
-  left: 0;
-  right: 0;
   position: fixed;
   z-index: 55;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  top: 0;
+  left: 0;
 }
 
-.preloader .texts-container {
+.texts-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,13 +21,13 @@
   width: 600px; /* This is too wide for most phones */
   font-size: 40px; /* This might be too large for small devices */
   font-weight: 800;
-  overflow: hidden;
   color: #fff;
+  overflow: hidden;
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-  .preloader .texts-container {
+  .texts-container {
     width: 80%; /* Reduce width to 80% of the screen size */
     font-size: 24px; /* Reduce font size */
     padding: 0 20px; /* Add some padding */
@@ -36,7 +35,7 @@
 }
 
 @media (max-width: 480px) {
-  .preloader .texts-container {
+  .texts-container {
     width: 90%; /* Further reduce width for very small devices */
     font-size: 20px; /* Further reduce font size */
     padding: 0 10px; /* Adjust padding */

@@ -16,7 +16,7 @@ import { useEffect, useState } from "react";
 import PreLoader from "./components/PreLoader/PreLoader";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);

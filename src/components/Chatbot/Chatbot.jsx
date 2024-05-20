@@ -61,8 +61,14 @@ const Chatbot = () => {
   };
 
   const updateSuggestions = (lastUserMessage) => {
-    let newSuggestions = [];
     const messageLower = lastUserMessage.toLowerCase();
+    let newSuggestions = [
+      "Hello",
+      "How are you?",
+      "What is your name?",
+      "Help me",
+      "What is climate change?",
+    ];
 
     if (messageLower.includes("hello")) {
       newSuggestions = [
@@ -75,14 +81,6 @@ const Chatbot = () => {
         "Contact support",
         "Troubleshooting tips",
         "User guides",
-      ];
-    } else {
-      newSuggestions = [
-        "Hello",
-        "How are you?",
-        "What is your name?",
-        "Help me",
-        "What is climate change?",
       ];
     }
 
@@ -109,7 +107,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="show-chatbot">
+    <div className="chatbot-container">
       <button className="chatbot-toggle" onClick={toggleChatbot}>
         <span className="material-symbols-outlined">
           {isVisible ? "close" : "mode_comment"}

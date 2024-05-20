@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SideContact = () => {
   return (
-    <a
-      href="/contact"
+    <Link
+      to="/contact"
       style={{
         textDecoration: "none",
         position: "fixed",
@@ -27,7 +28,7 @@ const SideContact = () => {
       }}
     >
       Contact Experts
-    </a>
+    </Link>
   );
 };
 

@@ -1,49 +1,56 @@
-.custom-navbar .navbar-nav .nav-link,
-.custom-navbar .navbar-brand {
+/* style.css */
+
+.custom-navbar .navbar-brand,
+.custom-navbar .navbar-nav .nav-link {
   color: white !important;
-  font-size: 16px; /* Font size reduced for a cleaner look */
-  text-transform: uppercase; /* Keeps all navbar items uppercase */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds shadow to text for better visibility */
+  font-size: 16px; /* Reduced font size for cleaner look */
+  text-transform: uppercase; /* Uppercase for navbar items */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
 }
 
+/* Navbar link styles */
 .custom-navbar .navbar-nav .nav-link {
-  border-right: 1px solid white; /* Adds a separator between navbar items */
-  padding-right: 25px; /* Increased padding for more space between items */
-  padding-left: 25px; /* Increased padding for more space between items */
+  border-right: 1px solid white; /* Separator between navbar items */
+  padding: 0 25px; /* Increased padding for more space */
 }
 
 .custom-navbar .navbar-nav .nav-link:last-child {
-  border-right: none; /* Removes the border for the last item */
+  border-right: none; /* No border for last item */
 }
 
 .custom-navbar .navbar-nav .nav-link:hover,
 .custom-navbar .navbar-nav .nav-link:focus {
-  background-color: rgba(255, 255, 255, 0.2); /* Adds a hover effect */
+  background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
 }
 
+/* Dropdown menu styles */
 .custom-navbar .navbar-nav .dropdown-menu {
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds shadow to the dropdown menu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for dropdown */
 }
 
 .custom-navbar .navbar-nav .dropdown-menu .nav-dropdown-item:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Hover effect for dropdown items */
 }
 
+/* Show dropdown on hover for larger screens */
 @media (min-width: 992px) {
   .custom-navbar .nav-item.dropdown:hover .dropdown-menu {
     display: block;
   }
 }
 
+/* Navbar alignment */
 .custom-navbar .navbar-collapse {
   justify-content: flex-end; /* Align nav items to the right */
 }
 
+/* Inverted toggler icon */
 .custom-navbar .navbar-toggler-icon {
   filter: invert(1);
 }
 
+/* Styles for smaller screens */
 @media (max-width: 767.98px) {
   .custom-navbar {
     background-color: rgba(0, 0, 0, 0.9) !important;
@@ -54,6 +61,7 @@
   }
 }
 
+/* Logo size */
 .logo {
   height: 80px; /* Increased logo size */
 }
