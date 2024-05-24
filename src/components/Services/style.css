@@ -7,6 +7,23 @@
   /* text-shadow: 2px 2px 4px #000000; Black shadow for depth */
   margin-bottom: 50px; /* Increased bottom margin */
 }
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.p-4 {
+  padding: 2rem !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
 
 h2 {
   font-size: 24px; /* Larger font size for service titles */

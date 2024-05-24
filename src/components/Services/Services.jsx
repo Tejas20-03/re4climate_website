@@ -49,18 +49,11 @@ const services = [
 function ServicesSection() {
   return (
     <Container fluid>
-      <Row className="justify-content-center">
-        <Col xs={12}>
-          <h1 className="text-center mt-4 mb-4 service-heading">
-            Our Services
-          </h1>
-        </Col>
-      </Row>
       {services.map((service, index) => (
-        <Row className="align-items-center" key={service.title}>
+        <Row className="align-items-center my-3" key={service.title}>
           {index % 2 === 0 ? (
             <>
-              <Col xs={12} md={6} className="p-4">
+              <Col xs={12} md={6} className="p-4 service-card">
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
                 <Link to={service.moreInfoLink} className="btn btn-primary">
@@ -71,13 +64,13 @@ function ServicesSection() {
                 <img
                   src={service.imageUrl}
                   alt={service.title}
-                  className="w-100 service-image"
+                  className="w-100"
                 />
               </Col>
             </>
           ) : (
             <>
-              <Col xs={12} md={6} className="p-4 order-md-2">
+              <Col xs={12} md={6} className="p-4 order-md-2 service-card">
                 <h2>{service.title}</h2>
                 <p>{service.description}</p>
                 <Link to={service.moreInfoLink} className="btn btn-primary">
@@ -88,7 +81,7 @@ function ServicesSection() {
                 <img
                   src={service.imageUrl}
                   alt={service.title}
-                  className="w-100 service-image"
+                  className="service-image"
                 />
               </Col>
             </>
