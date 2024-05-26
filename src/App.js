@@ -10,6 +10,7 @@ import HNavbar from "./components/Navbar/Navbar";
 import ServicesSection from "./components/Services/Services";
 import { useEffect, useState } from "react";
 import PreLoader from "./components/PreLoader/PreLoader";
+import AboutPage from "./components/AboutPage/About";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -38,6 +39,7 @@ function App() {
               }
               path="/"
             ></Route>
+            <Route path="/about" element={<AboutPage/>}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/wind" element={<Maintenance />}></Route>
             <Route path="/solar" element={<Maintenance />}></Route>

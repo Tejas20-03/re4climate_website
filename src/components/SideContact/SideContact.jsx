@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 
 const SideContact = () => {
-  return (
-    <Link
-      to="/contact"
-      style={{
+  const styles = useMemo(
+    () => ({
+      link: {
         textDecoration: "none",
         position: "fixed",
         fontSize: "14px",
@@ -18,15 +17,20 @@ const SideContact = () => {
         top: "45%",
         right: "-68px",
         lineHeight: "44px",
-        zIndex: "10",
+        zIndex: 10,
         transform: "rotate(-90deg)",
         boxShadow: "0 10px 35px #00000025",
         background: "#ffae12",
         textAlign: "center",
         cursor: "pointer",
-        transition: "all 0.5s ease 0s",
-      }}
-    >
+        transition: "all 0.5s ease",
+      },
+    }),
+    []
+  );
+
+  return (
+    <Link to="/contact" style={styles.link} aria-label="Contact Experts">
       Contact Experts
     </Link>
   );

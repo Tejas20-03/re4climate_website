@@ -1,14 +1,20 @@
+.maintenance-container {
+  padding-top: 50px;
+}
+
 .error-template {
   padding: 40px 15px;
   text-align: center;
 }
+
 .error-actions {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
+
 .error-actions .btn {
   margin-right: 10px;
 }
+
 .message-box h1 {
   color: #252932;
   font-size: 98px;

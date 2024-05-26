@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import image1 from "../../assets/img-600x400-1.jpg";
 import image2 from "../../assets/img-600x400-2.jpg";
 import image3 from "../../assets/image5.jpg";
 import image4 from "../../assets/image6.png";
 import image5 from "../../assets/img-600x400-5.jpg";
 import "./style.css";
-import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -14,7 +14,7 @@ const services = [
     description:
       "With a robust history of successfully completing numerous projects across the globe, RE4Climate demonstrates exceptional proficiency and expertise in project execution. As major corporations and leading financial institutions recognize the lucrative potential of the solar industry and are increasingly willing to invest in solar projects, the future for Solar PV looks exceedingly promising. This growing interest from influential market players not only underscores the viability of solar energy as a sustainable investment but also propels the industry toward greater innovation and expansion.",
     imageUrl: image1,
-    moreInfoLink: "/solar", // Placeholder link, replace with your actual path
+    moreInfoLink: "/solar",
   },
   {
     title: "Wind Energy",
@@ -50,42 +50,32 @@ function ServicesSection() {
   return (
     <Container fluid>
       {services.map((service, index) => (
-        <Row className="align-items-center my-3" key={service.title}>
-          {index % 2 === 0 ? (
-            <>
-              <Col xs={12} md={6} className="p-4 service-card">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-                <Link to={service.moreInfoLink} className="btn btn-primary">
-                  Read more
-                </Link>
-              </Col>
-              <Col xs={12} md={6} className="p-0">
-                <img
-                  src={service.imageUrl}
-                  alt={service.title}
-                  className="w-100"
-                />
-              </Col>
-            </>
-          ) : (
-            <>
-              <Col xs={12} md={6} className="p-4 order-md-2 service-card">
-                <h2>{service.title}</h2>
-                <p>{service.description}</p>
-                <Link to={service.moreInfoLink} className="btn btn-primary">
-                  Read more
-                </Link>
-              </Col>
-              <Col xs={12} md={6} className="p-0 order-md-1">
-                <img
-                  src={service.imageUrl}
-                  alt={service.title}
-                  className="service-image"
-                />
-              </Col>
-            </>
-          )}
+        <Row
+          className="align-items-center my-4 service-row"
+          key={service.title}
+        >
+          <Col
+            xs={12}
+            md={6}
+            className={`p-4 ${index % 2 !== 0 && "order-md-2"}`}
+          >
+            <h2 className="service-title">{service.title}</h2>
+            <p className="service-description">{service.description}</p>
+            <Link to={service.moreInfoLink} className="btn btn-primary">
+              Read more
+            </Link>
+          </Col>
+          <Col
+            xs={12}
+            md={6}
+            className={`p-0 ${index % 2 !== 0 && "order-md-1"}`}
+          >
+            <img
+              src={service.imageUrl}
+              alt={service.title}
+              className="service-image"
+            />
+          </Col>
         </Row>
       ))}
     </Container>

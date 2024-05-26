@@ -6,6 +6,7 @@ import image3 from "../../assets/image5.jpg";
 import image4 from "../../assets/image6.png";
 import image5 from "../../assets/image7.jpeg";
 import "./style.css";
+import grow from "../../assets/grow.png";
 
 function About() {
   return (
@@ -52,7 +53,19 @@ function About() {
           </Carousel>
         </Col>
         <Col xs={12} sm={12} md={4}>
-          <div style={{ paddingRight: "10px", marginBottom: "0" }}>
+          <div
+            style={{
+              paddingRight: "10px",
+              marginBottom: "0",
+              textAlign: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src={grow}
+              alt="grow logo"
+              style={{ maxWidth: "80%", marginTop: "40px" }}
+            />
             <h2 className="center-text">Growing strong over the years</h2>
             <p className="about-text">
               RE4Climate stands out as an engineering consultancy with a robust
