@@ -1,0 +1,109 @@
+.solarSection .parallax-1 .parallax-inner h1,
+.solarSection .parallax-2 .parallax-inner h1 {
+  font-size: 120px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 3px ;
+}
+
+.solarSection .parallax-1 .solar {
+  background: url("../../../assets/solar.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.solarSection .parallax-1 .parallax-inner,
+.solarSection .parallax-2 .parallax-inner {
+  padding: 10% 0;
+}
+
+.solarSection .parallax-2 .solar {
+  background: url("../../../assets/solar.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.solarSection p {
+  font-size: 16px;
+  color: #555;
+  text-align: justify;
+  line-height: 30px;
+  margin: 0 50px 40px;
+}
+
+.solarSection h2 {
+  font-size: 32px;
+  color: #555;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 20px 0 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .solarSection .parallax-1 .parallax-inner h1,
+  .solarSection .parallax-2 .parallax-inner h1 {
+    font-size: 90px;
+  }
+
+  .solarSection p {
+    margin: 0 30px 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .solarSection .parallax-1 .parallax-inner h1,
+  .solarSection .parallax-2 .parallax-inner h1 {
+    font-size: 70px;
+  }
+
+  .solarSection p {
+    margin: 0 20px 20px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+
+  .solarSection h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .solarSection .parallax-1 .parallax-inner h1,
+  .solarSection .parallax-2 .parallax-inner h1 {
+    font-size: 50px;
+  }
+
+  .solarSection p {
+    margin: 0 15px 15px;
+  }
+
+  .solarSection h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .solarSection .parallax-1 .parallax-inner h1,
+  .solarSection .parallax-2 .parallax-inner h1 {
+    font-size: 60px;
+  }
+
+  .solarSection p {
+    margin: 0 10px 10px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .solarSection h2 {
+    font-size: 20px;
+  }
+
+  .solarSection .parallax-1 .parallax-inner,
+  .solarSection .parallax-2 .parallax-inner {
+    padding: 20% 0;
+  }
+}

@@ -11,9 +11,15 @@ import ServicesSection from "./components/Services/Services";
 import { useEffect, useState } from "react";
 import PreLoader from "./components/PreLoader/PreLoader";
 import AboutPage from "./components/AboutPage/About";
+import Solar from "./components/SectorsPages/Solar/Solar";
+import Wind from "./components/SectorsPages/Wind/Wind";
+import HybridEnergy from "./components/SectorsPages/HybridEnergy/HybridEnergy";
+import BESS from "./components/SectorsPages/BESS/BESS";
+import GreenHydrogen from "./components/SectorsPages/GreenHydrogen/GreenHydrogen";
+import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -39,15 +45,16 @@ function App() {
               }
               path="/"
             ></Route>
-            <Route path="/about" element={<AboutPage/>}></Route>
+            <Route path="/about" element={<AboutPage />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/wind" element={<Maintenance />}></Route>
-            <Route path="/solar" element={<Maintenance />}></Route>
-            <Route path="/hybrid" element={<Maintenance />}></Route>
-            <Route path="/bess" element={<Maintenance />}></Route>
-            <Route path="/green" element={<Maintenance />}></Route>
-            <Route path="/nearshore" element={<Maintenance />}></Route>
+            <Route path="/wind-energy" element={<Wind />}></Route>
+            <Route path="/solar-energy" element={<Solar />}></Route>
+            <Route path="/hybrid-energy" element={<HybridEnergy />}></Route>
+            <Route path="/bess" element={<BESS />}></Route>
+            <Route path="/green-hydrogen" element={<GreenHydrogen />}></Route>
+            <Route path="/nearshore-offshore" element={<Nearshore />}></Route>
             <Route path="/service" element={<Maintenance />}></Route>
+            <Route path="/careers" element={<Maintenance />}></Route>
           </Routes>
           <SideContact />
           <Chatbot />
