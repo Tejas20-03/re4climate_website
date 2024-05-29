@@ -19,7 +19,7 @@ import GreenHydrogen from "./components/SectorsPages/GreenHydrogen/GreenHydrogen
 import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
