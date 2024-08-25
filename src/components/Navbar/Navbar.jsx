@@ -5,11 +5,12 @@ import "./style.css";
 
 const HNavbar = () => {
   const [navBackground, setNavBackground] = useState("transparent");
+  const [expanded,setExpanded] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       setNavBackground(
-        window.scrollY > 50 ? "rgba(0, 0, 0, 0.5)" : "transparent"
+        window.scrollY > 50 ? "rgba(0, 0, 0, 0.8)" : "transparent"
       );
     };
     window.addEventListener("scroll", handleScroll);
@@ -20,9 +21,12 @@ const HNavbar = () => {
     <Navbar
       expand="lg"
       fixed="top"
+      expanded={expanded}
+      onToggle={()=>setExpanded(!expanded)}
       className={`custom-navbar ${
         navBackground === "transparent" ? "bg-transparent" : "bg-dark"
       }`}
+      style={{backgroundColor:navBackground}}
     >
       <Container>
         <Navbar.Brand href="/">
@@ -30,7 +34,7 @@ const HNavbar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/service">Services</Nav.Link>

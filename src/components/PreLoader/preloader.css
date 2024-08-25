@@ -1,10 +1,10 @@
 .preloader {
   height: 100vh;
   width: 100%;
-  background: #000;
+  background: linear-gradient(135deg, #1a1a1a, #000);
   color: #fff;
   position: fixed;
-  z-index: 55;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,34 +16,54 @@
 .texts-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
   height: auto;
-  width: 600px; /* This is too wide for most phones */
-  font-size: 40px; /* This might be too large for small devices */
-  font-weight: 800;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
   text-align: center;
-  color: #fff;
-  overflow: hidden;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-  .texts-container {
-    width: 80%; /* Reduce width to 80% of the screen size */
-    font-size: 24px; /* Reduce font size */
-    padding: 0 20px; /* Add some padding */
+.preloader-logo {
+  max-width: 100%;
+  height: auto;
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 480px) {
-  .texts-container {
-    width: 90%; /* Further reduce width for very small devices */
-    font-size: 20px; /* Further reduce font size */
-    padding: 0 10px; /* Adjust padding */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
 
-  .texts-container span {
-    flex: 1 1 100%; /* Ensure each span takes full width on very small screens */
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width:768px) {
+  .texts-container {
+    max-width: 80%;
+  }
+}
+
+@media (max-width:480px) {
+  .texts-container {
+    max-width: 90%;
   }
 }

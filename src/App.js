@@ -1,16 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import About from "./components/About/About";
-import Footer from "./components/Footer/Footer";
-import Contact from "./components/Contact/Contact";
-import Maintenance from "./components/Maintenance/Maintenance";
-import SideContact from "./components/SideContact/SideContact";
-import Chatbot from "./components/Chatbot/Chatbot";
-import Hero from "./components/Hero/Hero";
-import HNavbar from "./components/Navbar/Navbar";
-import ServicesSection from "./components/Services/Services";
 import { useEffect, useState } from "react";
 import PreLoader from "./components/PreLoader/PreLoader";
-import AboutPage from "./components/AboutPage/About";
+import HNavbar from "./components/Navbar/Navbar";
+import SideContact from "./components/SideContact/SideContact";
+import Chatbot from "./components/Chatbot/Chatbot";
+import Footer from "./components/Footer/Footer";
+
+// Import page components
+import HomePage from "./pages/HomePage/HomePage";
+import AboutPage from "./pages/AboutPage/About";
+import Contact from "./pages/Contact/Contact";
+import Maintenance from "./pages/Maintenance/Maintenance";
+
+// Import sector pages
 import Solar from "./components/SectorsPages/Solar/Solar";
 import Wind from "./components/SectorsPages/Wind/Wind";
 import HybridEnergy from "./components/SectorsPages/HybridEnergy/HybridEnergy";
@@ -20,13 +22,30 @@ import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
+
+  // Simulate loading time
+  useEffect(() => { 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 7000);
+    }, 4000);
 
     return () => clearTimeout(timer);
-  });
+  }, []);
+
+  const routes = [
+    { path: "/", element: <HomePage /> },
+    { path: "/about", element: <AboutPage /> },
+    { path: "/contact", element: <Contact /> },
+    { path: "/wind-energy", element: <Wind /> },
+    { path: "/solar-energy", element: <Solar /> },
+    { path: "/hybrid-energy", element: <HybridEnergy /> },
+    { path: "/bess", element: <BESS /> },
+    { path: "/green-hydrogen", element: <GreenHydrogen /> },
+    { path: "/nearshore-offshore", element: <Nearshore /> },
+    { path: "/service", element: <Maintenance /> },
+    { path: "/careers", element: <Maintenance /> },
+  ];
+
   return (
     <>
       {loading ? (
@@ -35,26 +54,9 @@ function App() {
         <BrowserRouter>
           <HNavbar />
           <Routes>
-            <Route
-              element={
-                <>
-                  <Hero />
-                  <About />
-                  <ServicesSection />
-                </>
-              }
-              path="/"
-            ></Route>
-            <Route path="/about" element={<AboutPage />}></Route>
-            <Route path="/contact" element={<Contact />}></Route>
-            <Route path="/wind-energy" element={<Wind />}></Route>
-            <Route path="/solar-energy" element={<Solar />}></Route>
-            <Route path="/hybrid-energy" element={<HybridEnergy />}></Route>
-            <Route path="/bess" element={<BESS />}></Route>
-            <Route path="/green-hydrogen" element={<GreenHydrogen />}></Route>
-            <Route path="/nearshore-offshore" element={<Nearshore />}></Route>
-            <Route path="/service" element={<Maintenance />}></Route>
-            <Route path="/careers" element={<Maintenance />}></Route>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
           </Routes>
           <SideContact />
           <Chatbot />

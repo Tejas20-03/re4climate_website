@@ -11,11 +11,8 @@ const PreLoader = () => {
   return (
     <div className="preloader">
       <div className="texts-container">
-        <span>Renewable Energy</span>
-        <span>means</span>
-        <span>
-          <img src={logo} alt="logo" width="100px" />
-        </span>
+        
+          <img src={logo} alt="logo" className="preloader-logo" />
       </div>
     </div>
   );
