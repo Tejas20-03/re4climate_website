@@ -1,101 +1,92 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.re4climate-about {
+  max-width: 1000px;
+  margin: 120px auto 4rem; /* Added top margin to accommodate navbar */
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.aboutUs {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.aboutUs::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(to top, #fff, transparent);
-  z-index: 50;
-}
-
-.aboutUs .img1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none;
-}
-
-.aboutUs .img1 #man {
-  transform-origin: bottom;
-}
-
-#text {
-  position: relative;
-  color: #fff;
-  font-size: 10vw;
+.re4climate-about__title {
+  font-size: 3rem;
+  color: #20496a;
+  margin-bottom: 2rem;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.re4climate-about__content {
+  line-height: 1.8;
+}
+
+.re4climate-about__heading {
+  font-size: 2rem;
+  color: #20496a;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #20496a;
+  padding-bottom: 0.5rem;
+}
+
+.re4climate-about__paragraph {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.re4climate-about__list {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.re4climate-about__list-item {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.re4climate-about__list-item::before {
+  content: "•";
+  color: #20496a;
   font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
-.sec {
-  position: relative;
-  padding: 100px;
+.re4climate-about__image-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
 }
 
-.sec h2 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-  color: #20496a;
-}
-
-.sec p {
-  font-size: 1.2rem;
-  color: #20496a;
-  line-height: 1.6;
+.re4climate-about__image {
+  width: 48%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
-  #text {
-    font-size: 15vw;
+  .re4climate-about {
+    margin: 100px auto 2rem;
+    padding: 1.5rem;
   }
 
-  .sec {
-    padding: 50px;
-  }
-
-  .sec h2 {
+  .re4climate-about__title {
     font-size: 2.5rem;
   }
 
-  .sec p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #text {
-    font-size: 15vw;
+  .re4climate-about__heading {
+    font-size: 1.8rem;
   }
 
-  .sec {
-    padding: 25px;
+  .re4climate-about__image-container {
+    flex-direction: column;
   }
 
-  .sec h2 {
-    font-size: 2rem;
-  }
-
-  .sec p {
-    font-size: 0.9rem;
+  .re4climate-about__image {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }

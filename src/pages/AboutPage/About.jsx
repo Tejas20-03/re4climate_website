@@ -1,123 +1,41 @@
-import React, { useEffect } from "react";
-import bg from "../../assets/bg.jpg";
-import man from "../../assets/man.png";
-import cloud1 from "../../assets/clouds_1.png";
-import cloud2 from "../../assets/clouds_2.png";
-import mountainsLeft from "../../assets/mountain_left.png";
-import mountainsRight from "../../assets/mountain_right.png";
+import React from "react";
 import "./style.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import solarImage from "../../assets/img-600x400-1.jpg";
+import windImage from "../../assets/img-600x400-2.jpg";
 
 function About() {
-  useEffect(() => {
-    gsap.to("#bg", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 1.5,
-    });
-    gsap.to("#man", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      scale: 0.5,
-    });
-    gsap.to("#mountainL", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      x: -500,
-    });
-    gsap.to("#mountainR", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      x: 500,
-    });
-    gsap.to("#cloud1", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      x: 200,
-    });
-    gsap.to("#cloud2", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      x: -200,
-    });
-    gsap.to("#text", {
-      scrollTrigger: {
-        scrub: 1,
-      },
-      y: 500,
-    });
-  });
   return (
-    <>
-      <section className="aboutUs">
-        <img id="bg" src={bg} alt="bg" className="img1" />
-        <h2 id="text">RE4Climate</h2>
-        <img src={man} alt="man" id="man" className="img1" />
-        <img src={cloud1} alt="cloud" id="cloud1" className="img1" />
-        <img src={cloud2} alt="cloud" id="cloud2" className="img1" />
-        <img
-          src={mountainsLeft}
-          alt="mountain"
-          id="mountainL"
-          className="img1"
-        />
-        <img
-          src={mountainsRight}
-          alt="mountain"
-          id="mountainR"
-          className="img1"
-        />
-      </section>
-      <div className="sec">
-        <h2>About RE4Climate</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam hic sunt
-          sequi facere iste, atque reprehenderit expedita odio molestias omnis
-          quae unde iusto repudiandae voluptatem aperiam! Repudiandae
-          accusantium illum dolorem. Quas assumenda pariatur animi voluptate
-          nostrum exercitationem hic iste eos expedita illum error possimus
-          fugiat delectus vitae quam nemo repellendus, laboriosam nobis nihil
-          nesciunt consectetur perferendis! Optio numquam aliquam nemo! Dolorem,
-          quia quo optio quam soluta rerum porro magnam. Nihil obcaecati
-          delectus nisi at iusto, in officia perferendis, impedit debitis
-          quaerat vel aliquam adipisci, fuga exercitationem veritatis omnis
-          laudantium facilis! Totam deleniti magnam similique illo? Veniam
-          corporis tenetur explicabo optio, quia autem repudiandae quod ad,
-          accusamus molestias, alias a nemo ipsa perferendis quas recusandae
-          quisquam atque asperiores? Consectetur, repudiandae quae. Eum, ipsam
-          sapiente porro deleniti doloribus dolorum similique fuga animi
-          exercitationem consectetur maxime commodi, harum neque! Similique
-          deleniti quo placeat nam, minus ea nesciunt molestiae animi, rerum
-          laboriosam, quas officiis! Autem at corporis tenetur sit velit est
-          debitis tempore nihil iusto excepturi aut unde blanditiis vitae
-          nostrum sequi, reprehenderit sed fuga non deleniti laborum magnam?
-          Consequatur quis vitae sapiente corporis. Velit similique, numquam
-          consectetur ad tenetur voluptate quo itaque repudiandae voluptatibus,
-          quasi fuga eum accusamus reprehenderit nam sequi odit. Eos nihil enim
-          in laboriosam vero rerum ab, optio quibusdam amet! Eveniet officiis
-          repellat qui perspiciatis nam nisi magni eaque architecto deserunt.
-          Laborum eligendi cupiditate odio? Quae libero fuga sequi, quas
-          quibusdam reprehenderit illo possimus perspiciatis nam recusandae vel
-          eligendi harum? Inventore exercitationem perspiciatis magnam eum
-          cumque similique nam officia quo fugit dignissimos dolor, quia illo
-          iure doloribus, ratione facilis dolore possimus repudiandae
-          necessitatibus fugiat est aliquam facere beatae illum. Quos! Earum,
-          inventore modi distinctio voluptates iusto dolor ratione provident
-          quae delectus sunt in repellendus eligendi necessitatibus! Iure
-          laborum ad, quo laudantium aliquid architecto nam ut quaerat libero
-          dolorum rerum modi?
+    <div className="re4climate-about">
+      <h1 className="re4climate-about__title">About RE4Climate</h1>
+      <div className="re4climate-about__content">
+        <p className="re4climate-about__paragraph">
+          RE4Climate is a leading renewable energy company dedicated to creating a sustainable future through innovative clean energy solutions. Our mission is to accelerate the global transition to renewable energy sources and combat climate change.
+        </p>
+        <div className="re4climate-about__image-container">
+          <img src={solarImage} alt="Solar Energy" className="re4climate-about__image" />
+          <img src={windImage} alt="Wind Energy" className="re4climate-about__image" />
+        </div>
+        <h2 className="re4climate-about__heading">Our Expertise</h2>
+        <ul className="re4climate-about__list">
+          <li className="re4climate-about__list-item">Solar Energy: Harnessing the power of the sun for a brighter tomorrow.</li>
+          <li className="re4climate-about__list-item">Wind Energy: Capturing the strength of wind to generate clean electricity.</li>
+          <li className="re4climate-about__list-item">Hybrid Energy Systems: Combining multiple renewable sources for optimal efficiency.</li>
+        </ul>
+        <h2 className="re4climate-about__heading">Our Commitment</h2>
+        <p className="re4climate-about__paragraph">
+          At RE4Climate, we are committed to:
+        </p>
+        <ul className="re4climate-about__list">
+          <li className="re4climate-about__list-item">Reducing carbon emissions and fighting climate change</li>
+          <li className="re4climate-about__list-item">Developing cutting-edge renewable energy technologies</li>
+          <li className="re4climate-about__list-item">Empowering communities through sustainable energy solutions</li>
+          <li className="re4climate-about__list-item">Collaborating with partners to drive global energy transformation</li>
+        </ul>
+        <p className="re4climate-about__paragraph">
+          Join us in our journey towards a cleaner, greener, and more sustainable world. Together, we can make a difference for our planet and future generations.
         </p>
       </div>
-    </>
+    </div>
   );
 }
 
