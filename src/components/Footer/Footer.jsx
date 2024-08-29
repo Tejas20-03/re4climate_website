@@ -13,7 +13,7 @@ function Footer() {
             <div className="row">
               <div className="col-lg-4 col-md-6 col-sm-12 footer-column">
                 <div className="logo-widget footer-widget">
-                  <figure class="logo-box">
+                  <figure className="logo-box">
                     <a href="#">
                       <img src={logo} style={{ width: "80px" }} alt="" />
                     </a>
@@ -82,7 +82,7 @@ function Footer() {
               <div className="col-lg-3 col-md-6 col-sm-12 footer-widget">
                 <div className="contact-widget footer-widget">
                   <div className="footer-title">Contact</div>
-                  <div class="text">
+                  <div className="text">
                     <p>
                       2406B, The Iconic Corenthum, 41, Block A, Industrial Area,
                       Sector 62, Noida, Uttar Pradesh 201301

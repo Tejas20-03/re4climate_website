@@ -9,21 +9,20 @@ import inox from '../../assets/clients/inox.jpg';
 
 
 const Testimonial = () => {
-    const partnerLogos = [acciona, avaada, continuum, fortum, images,inox];
+    const partnerLogos = [acciona, avaada, continuum, fortum, images, inox];
     return (
         <div className="testimonials-container">
-          <h2>Our Partners</h2>
-          <div className="logo-slider">
-            {partnerLogos.map((logo, index) => (
-              <img key={index} src={logo} alt={`Partner ${index + 1}`} />
-            ))}
-            {partnerLogos.map((logo, index) => (
-              <img key={index + partnerLogos.length} src={logo} alt={`Partner ${index + 1}`} />
-            ))}
-          </div>
+            <h2 className="partners-heading">
+                <span className="partners-text">Our Partners</span>
+            </h2>
+            <div className="logo-slider">
+                {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                    <img key={index} src={logo} alt={`Partner ${index % partnerLogos.length + 1}`} />
+                ))}
+            </div>
         </div>
-      );
+    );
 }
 
-export default Testimonial
+export default Testimonial;
 
