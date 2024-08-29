@@ -1,0 +1,23 @@
+.testimonials-container {
+    padding: 2rem 0;
+    overflow: hidden;
+  }
+  
+  .logo-slider {
+    display: flex;
+    animation: slide 30s linear infinite;
+  }
+  
+  .logo-slider img {
+    height: 50px;
+    margin: 0 20px;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
