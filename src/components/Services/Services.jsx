@@ -7,30 +7,34 @@ import "./style.css";
 function ServicesSection() {
   return (
     <Container fluid className="services-container">
-      {services.map((service, index) => (
-        <Row
-          className={`align-items-center my-5 service-row ${
-            index % 2 !== 0 ? "flex-row-reverse" : ""
-          }`}
-          key={service.title}
-        >
-          <Col xs={12} md={6} className="p-4">
-            <h2 className="service-title mb-3">{service.title}</h2>
-            <p className="service-description mb-4">{service.description}</p>
-            <Link to={service.moreInfoLink} className="btn btn-primary">
-              Read more
-            </Link>
+      <Row className="mb-5">
+        <Col xs={12}>
+          <h2 className="sectors-heading">
+            <span className="sectors-text">Sectors</span>
+          </h2>
+        </Col>
+      </Row>
+      <Row>
+        {services.map((service, index) => (
+          <Col xs={12} md={4} key={service.title} className="mb-4">
+            <div className="service-card">
+              <img
+                src={service.imageUrl}
+                alt={service.title}
+                className="service-image"
+                loading="lazy"
+              />
+              <div className="service-overlay">
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+                <Link to={service.moreInfoLink} className="btn btn-primary">
+                  Read more
+                </Link>
+              </div>
+            </div>
           </Col>
-          <Col xs={12} md={6} className="p-0">
-            <img
-              src={service.imageUrl}
-              alt={service.title}
-              className="service-image"
-              loading="lazy"
-            />
-          </Col>
-        </Row>
-      ))}
+        ))}
+      </Row>
     </Container>
   );
 }

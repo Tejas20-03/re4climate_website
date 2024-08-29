@@ -1,0 +1,109 @@
+.contact-page {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+  }
+  
+  .contact-info {
+    margin-bottom: 40px;
+  }
+  
+  .contact-info h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .info-item svg {
+    font-size: 1.2rem;
+    color: #0d6efd;
+    margin-right: 15px;
+  }
+  
+  .info-item span {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .google-map-container {
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+  
+  .google-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .contact-form-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .contact-form .form-control {
+    border: none;
+    border-bottom: 2px solid #ced4da;
+    padding: 1.375rem 0.75rem;
+    background-color: #f8f9fa;
+  }
+  
+  .contact-form .form-control:focus {
+    box-shadow: none;
+    border-color: #0d6efd;
+    background-color: #ffffff;
+  }
+  
+  .contact-form .form-floating label {
+    padding-left: 0.75rem;
+    color: #6c757d;
+  }
+  
+  .contact-form .form-floating input:focus ~ label,
+  .contact-form .form-floating textarea:focus ~ label {
+    color: #0d6efd;
+  }
+  
+  .send-button {
+    background-color: #0d6efd;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .send-button:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.3);
+  }
+  
+  @media (max-width: 991px) {
+    .contact-info, .google-map-container, .contact-form-container {
+      margin-bottom: 40px;
+    }
+  }
+  

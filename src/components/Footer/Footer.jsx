@@ -72,11 +72,6 @@ function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a href="/sectors" className="text-decoration-none">
-                        Sectors
-                      </a>
-                    </li>
-                    <li>
                       <a href="/careers" className="text-decoration-none">
                         Career
                       </a>

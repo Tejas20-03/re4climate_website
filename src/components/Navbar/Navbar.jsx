@@ -38,16 +38,6 @@ const HNavbar = () => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
             <Nav.Link href="/service">Services</Nav.Link>
-            <NavDropdown title="Sectors" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/solar-energy">Solar Energy</NavDropdown.Item>
-              <NavDropdown.Item href="/wind-energy">Wind Energy</NavDropdown.Item>
-              <NavDropdown.Item href="/hybrid-energy">Hybrid Energy</NavDropdown.Item>
-              <NavDropdown.Item href="/bess">BESS</NavDropdown.Item>
-              <NavDropdown.Item href="/green-hydrogen">Green Hydrogen</NavDropdown.Item>
-              <NavDropdown.Item href="/nearshore-offshore">
-                Nearshore/Offshore
-              </NavDropdown.Item>
-            </NavDropdown>
             <Nav.Link href="/careers">Careers</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
