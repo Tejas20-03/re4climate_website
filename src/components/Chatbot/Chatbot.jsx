@@ -24,19 +24,26 @@ const Chatbot = () => {
     "What is climate change?",
   ]);
   const [isVisible, setIsVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
   const handleInputChange = (e) => {
     setCurrentMessage(e.target.value);
   };
 
-  const sendMessage = (messageText = currentMessage) => {
+  const sendMessage = async (messageText = currentMessage) => {
     if (messageText.trim() !== "") {
+      setIsLoading(true);
       const newMessage = {
         id: messages.length + 1,
         text: messageText,
         type: "outgoing",
       };
+      setMessages((prevMessages) => [...prevMessages, newMessage]);
+      setCurrentMessage("");
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       const responseText = generateResponse(messageText);
       const newResponse = {
         id: messages.length + 2,
@@ -44,9 +51,9 @@ const Chatbot = () => {
         type: "incoming",
       };
 
-      setMessages((prevMessages) => [...prevMessages, newMessage, newResponse]);
-      setCurrentMessage("");
+      setMessages((prevMessages) => [...prevMessages, newResponse]);
       updateSuggestions(messageText);
+      setIsLoading(false);
     }
   };
 
@@ -95,7 +102,21 @@ const Chatbot = () => {
   };
 
   const toggleChatbot = () => {
-    setIsVisible((isVisible) => !isVisible);
+    setIsVisible((prevIsVisible) => !prevIsVisible);
+    if (!isVisible) {
+      setSuggestedQuestions([
+        "Hello",
+        "How are you?",
+        "What is your name?",
+        "Help me",
+        "What is climate change?",
+      ]);
+    }
+  };
+
+  const handleSuggestionClick = (question) => {
+    sendMessage(question);
+    setSuggestedQuestions([]);
   };
 
   useEffect(() => {
@@ -128,13 +149,19 @@ const Chatbot = () => {
                 <p>{message.text}</p>
               </li>
             ))}
+            {isLoading && (
+              <li className="chat incoming">
+                <span className="material-symbols-outlined">smart_toy</span>
+                <p>Typing...</p>
+              </li>
+            )}
             <div ref={messagesEndRef} />
           </ul>
           <div className="suggestions">
             {suggestedQuestions.map((question) => (
               <button
                 key={question}
-                onClick={() => sendMessage(question)}
+                onClick={() => handleSuggestionClick(question)}
                 className="suggestion-chip"
               >
                 {question}
