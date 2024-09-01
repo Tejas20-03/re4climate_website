@@ -1,0 +1,116 @@
+.project-execution-container {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.main-title {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section {
+    margin-bottom: 60px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section-content {
+    padding: 0 20px;
+}
+
+.intro-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.sub-section {
+    margin-top: 30px;
+}
+
+.sub-section-title {
+    color: #34495e;
+    margin-bottom: 15px;
+}
+
+.service-list, .benefit-list, .support-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-list li, .benefit-list li, .support-list li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.service-list li:before, .benefit-list li:before, .support-list li:before {
+    content: "§";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .project-execution-container {
+        padding: 10px;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .intro-text {
+        font-size: 16px;
+    }
+}
+
+/* Animations */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.service-list li, .benefit-list li, .support-list li {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add animation delay for list items */
+.service-list li:nth-child(1), .benefit-list li:nth-child(1), .support-list li:nth-child(1) { animation-delay: 0.1s; }
+.service-list li:nth-child(2), .benefit-list li:nth-child(2), .support-list li:nth-child(2) { animation-delay: 0.2s; }
+.service-list li:nth-child(3), .benefit-list li:nth-child(3), .support-list li:nth-child(3) { animation-delay: 0.3s; }
+.service-list li:nth-child(4), .benefit-list li:nth-child(4), .support-list li:nth-child(4) { animation-delay: 0.4s; }
+.service-list li:nth-child(5), .benefit-list li:nth-child(5), .support-list li:nth-child(5) { animation-delay: 0.5s; }
+.service-list li:nth-child(6), .benefit-list li:nth-child(6), .support-list li:nth-child(6) { animation-delay: 0.6s; }
