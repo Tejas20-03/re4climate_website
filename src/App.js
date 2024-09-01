@@ -19,8 +19,8 @@ import HybridEnergy from "./components/SectorsPages/HybridEnergy/HybridEnergy";
 import BESS from "./components/SectorsPages/BESS/BESS";
 import GreenHydrogen from "./components/SectorsPages/GreenHydrogen/GreenHydrogen";
 import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
-import { ProjectExecution } from "./components/Services/ProjectExecution";
-import REConsulting from "./components/Services/REConsulting";
+import REConsulting from "./components/Services/REConsulting/REConsulting";
+import { ProjectExecution } from "./components/Services/ProjectExecution/ProjectExecution";
 
 function App() {
   const [loading, setLoading] = useState(true);

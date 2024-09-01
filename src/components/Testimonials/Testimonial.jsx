@@ -45,6 +45,10 @@ const Testimonial = () => {
             <h2 className="partners-heading">
                 <span className="partners-text">Our Partners</span>
             </h2>
+            <div className="company-info">
+                <p>RE4C has already executed/executing more than 100 projects with cumulative ~27 GW of RE assets across India. Our team consists of 100+ FTEs and 50+ off-role professionals working on diverse assignments.</p>
+                <p>We are currently assisting the following key clients with their multiple RE projects:</p>
+            </div>
             <div className="logo-slider">
                 {[...partnerLogos, ...partnerLogos].map((logo, index) => (
                     <img
