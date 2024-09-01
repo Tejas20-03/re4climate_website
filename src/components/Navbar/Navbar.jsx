@@ -5,7 +5,7 @@ import "./style.css";
 
 const HNavbar = () => {
   const [navBackground, setNavBackground] = useState("transparent");
-  const [expanded,setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,11 +22,11 @@ const HNavbar = () => {
       expand="lg"
       fixed="top"
       expanded={expanded}
-      onToggle={()=>setExpanded(!expanded)}
+      onToggle={() => setExpanded(!expanded)}
       className={`custom-navbar ${
         navBackground === "transparent" ? "bg-transparent" : "bg-dark"
       }`}
-      style={{backgroundColor:navBackground}}
+      style={{ backgroundColor: navBackground }}
     >
       <Container>
         <Navbar.Brand href="/">
@@ -37,7 +37,10 @@ const HNavbar = () => {
           <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/service">Services</Nav.Link>
+            <NavDropdown title="Services" id="services-dropdown">
+              <NavDropdown.Item href="/services/re-consulting">RE Consulting Services</NavDropdown.Item>
+              <NavDropdown.Item href="/services/project-execution">Project Execution and Development Services</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="/careers">Careers</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>

@@ -191,6 +191,59 @@
   color: inherit;
 }
 
+.chatbot-popup {
+  position: fixed;
+  right: 90px;
+  bottom: 20px;
+  background-color: rgb(24, 202, 78);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.chatbot-dialog {
+  position: fixed;
+  right: 90px;
+  bottom: 20px;
+  background-color: rgb(24, 202, 78);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 250px;
+}
+
+.chatbot-dialog p {
+  margin-bottom: 10px;
+}
+
+.chatbot-dialog button {
+  background-color: white;
+  color: rgb(24, 202, 78);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.chatbot-dialog button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add this to the media query for mobile devices */
+@media (max-width: 490px) {
+  .chatbot-dialog {
+    right: 70px;
+    bottom: 80px;
+    max-width: 200px;
+  }
+}
+
 @media (max-width: 490px) {
   .chatbot {
     width: 300px;

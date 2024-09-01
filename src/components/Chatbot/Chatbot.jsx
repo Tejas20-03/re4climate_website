@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./chatbot.css";
+import gsap from "gsap";
 
 const Chatbot = () => {
   const qaPairs = {
@@ -25,6 +26,7 @@ const Chatbot = () => {
   ]);
   const [isVisible, setIsVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [showDialog, setShowDialog] = useState(false);
   const messagesEndRef = useRef(null);
 
   const handleInputChange = (e) => {
@@ -103,6 +105,7 @@ const Chatbot = () => {
 
   const toggleChatbot = () => {
     setIsVisible((prevIsVisible) => !prevIsVisible);
+    setShowDialog(false);
     if (!isVisible) {
       setSuggestedQuestions([
         "Hello",
@@ -127,6 +130,46 @@ const Chatbot = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  useEffect(() => {
+    const dialogInterval = setInterval(() => {
+      if (!isVisible) {
+        setShowDialog(true);
+        setTimeout(() => setShowDialog(false), 5000);
+      }
+    }, 60000);
+
+    return () => clearInterval(dialogInterval);
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (isVisible) {
+      gsap.to(".chatbot", {
+        duration: 0.5,
+        scale: 1,
+        opacity: 1,
+        ease: "power3.out"
+      });
+    } else {
+      gsap.to(".chatbot", {
+        duration: 0.5,
+        scale: 0.5,
+        opacity: 0,
+        ease: "power3.in"
+      });
+    }
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (showDialog) {
+      gsap.from(".chatbot-dialog", {
+        duration: 0.5,
+        y: 50,
+        opacity: 0,
+        ease: "power3.out"
+      });
+    }
+  }, [showDialog]);
+
   return (
     <div className="chatbot-container">
       <button className="chatbot-toggle" onClick={toggleChatbot}>
@@ -134,6 +177,12 @@ const Chatbot = () => {
           {isVisible ? "close" : "mode_comment"}
         </span>
       </button>
+      {showDialog && !isVisible && (
+        <div className="chatbot-dialog">
+          <p>Need assistance? Open the chatbot!</p>
+          <button onClick={toggleChatbot}>Open Chatbot</button>
+        </div>
+      )}
       {isVisible && (
         <div className="chatbot">
           <header>

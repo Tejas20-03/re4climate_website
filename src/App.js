@@ -19,6 +19,8 @@ import HybridEnergy from "./components/SectorsPages/HybridEnergy/HybridEnergy";
 import BESS from "./components/SectorsPages/BESS/BESS";
 import GreenHydrogen from "./components/SectorsPages/GreenHydrogen/GreenHydrogen";
 import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
+import { ProjectExecution } from "./components/Services/ProjectExecution";
+import REConsulting from "./components/Services/REConsulting";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,7 +44,8 @@ function App() {
     { path: "/bess", element: <BESS /> },
     { path: "/green-hydrogen", element: <GreenHydrogen /> },
     { path: "/nearshore-offshore", element: <Nearshore /> },
-    { path: "/service", element: <Maintenance /> },
+    { path: "/services/re-consulting", element: <REConsulting /> },
+    { path: "/services/project-execution", element: <ProjectExecution /> },
     { path: "/careers", element: <Maintenance /> },
   ];
 
