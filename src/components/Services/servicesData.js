@@ -2,7 +2,8 @@ import image1 from "../../assets/img-600x400-1.jpg";
 import image2 from "../../assets/img-600x400-2.jpg";
 import image3 from "../../assets/image5.jpg";
 import image4 from "../../assets/image6.png";
-import image5 from "../../assets/img-600x400-5.jpg";
+import image5 from "../../assets/green.jpg";
+import image6 from "../../assets/nearshore.jpg";
 
 export const services = [
   {
@@ -39,5 +40,12 @@ export const services = [
       "Hydrogen is celebrated as a fuel of the future, holding immense potential as an energy source. As the most flammable element on Earth, engineering solutions for its use present unique challenges. However, hydrogen stands out as a stellar alternative to conventional fossil fuels, offering the significant environmental advantage of emitting only water as a by-product upon combustion. This attribute makes it an attractive option for sustainable energy initiatives seeking to reduce global carbon emissions.",
     imageUrl: image5,
     moreInfoLink: "/green-hydrogen",
+  },
+  {
+    title: "Nearshore/offshore",
+    description:
+      "Nearshore and offshore strategies are increasingly recognized as powerful approaches for optimizing business operations in a globalized economy. These models offer substantial cost savings and access to a vast talent pool, enabling companies to enhance efficiency and competitiveness. While managing teams across different time zones and cultures presents challenges, the benefits of these strategies—such as increased scalability, flexibility, and innovation—make them attractive alternatives to traditional in-house operations. By leveraging nearshore and offshore resources, businesses can significantly reduce operational costs while maintaining high standards of quality and productivity.",
+    imageUrl: image6,
+    moreInfoLink: "/nearshore-offshore",
   },
 ];
