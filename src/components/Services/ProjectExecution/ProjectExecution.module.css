@@ -1,0 +1,189 @@
+/* ProjectExecution.module.css */
+
+.pe-container {
+    display: flex;
+    height: calc(100vh - 80px);
+    background-color: #f8f9fa;
+    margin-top: 80px;
+    overflow: hidden;
+    transition: height 0.6s ease;
+}
+
+/* Section Styling */
+.pe-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: flex 0.6s ease, margin 0.6s ease;
+    border-radius: 20px;
+    margin: 0 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pe-section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    display: block;
+    border-radius: 20px;
+}
+
+.pe-section.active {
+    flex: 3;
+}
+
+.pe-section.shrink {
+    flex: 0.5;
+}
+
+.pe-section:hover .pe-section-image {
+    transform: scale(1.05);
+}
+
+/* Heading Overlay on Image */
+.pe-section-heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.5px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+}
+
+.pe-section:hover .pe-section-heading {
+    opacity: 0.8;
+}
+
+.pe-section-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.pe-section.active .pe-section-content {
+    opacity: 1;
+}
+
+.pe-section.active .pe-section-image {
+    opacity: 0;
+}
+
+.pe-section.active .pe-section-heading {
+    opacity: 0;
+}
+
+.pe-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffeb3b;
+}
+
+.pe-section p, .pe-section ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+}
+
+.pe-section ul {
+    padding-left: 20px;
+}
+
+.pe-section li {
+    margin-bottom: 15px;
+}
+
+.pe-section-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pe-section-content::-webkit-scrollbar-thumb {
+    background-color: #3f51b5;
+    border-radius: 10px;
+}
+
+.pe-section-content::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .pe-container {
+        flex-direction: column;
+        height: auto;
+        margin-top: 60px;
+    }
+
+    .pe-section {
+        width: 90%;
+        margin: 15px auto;
+        height: 300px;
+    }
+
+    .pe-section.active {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .pe-section-heading {
+        font-size: 1.8rem;
+    }
+
+    .pe-section-content {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .pe-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .pe-section p, .pe-section ul {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pe-section-heading {
+        font-size: 1.5rem;
+    }
+
+    .pe-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .pe-section p, .pe-section ul {
+        font-size: 0.9rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

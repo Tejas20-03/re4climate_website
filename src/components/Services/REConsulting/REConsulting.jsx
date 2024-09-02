@@ -1,16 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './REConsulting.css';
 
 const REConsulting = () => {
-    return (
-        <div className="re-consulting-container">
-            <h1 className="main-title">RE Consulting Services</h1>
+    const [activeSection, setActiveSection] = useState(null);
 
-            <section className="section">
-                <h2 className="section-title">1.1. Energy Yield Assessment (EYA)</h2>
-                <div className="section-content">
+    const toggleSection = (index) => {
+        setActiveSection(activeSection === index ? null : index);
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const sections = [
+        {
+            title: "Energy Yield Assessment (EYA)",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, we offer a comprehensive suite of Renewable Energy Assessment and Advisory services designed to maximize the efficiency and profitability of your energy projects. Our expertise spans across wind, solar and hybrid energy systems, providing critical insights needed for successful project development and execution.</p>
-
                     <div className="sub-section">
                         <h3 className="sub-section-title">Our Services Include:</h3>
                         <ul className="service-list">
@@ -22,7 +44,6 @@ const REConsulting = () => {
                             <li><strong>Project Planning and Pre-Developmental Support</strong>: Comprehensive guidance through initial project stages.</li>
                         </ul>
                     </div>
-
                     <div className="sub-section">
                         <h3 className="sub-section-title">What You Get:</h3>
                         <ul className="benefit-list">
@@ -33,12 +54,13 @@ const REConsulting = () => {
                             <li>Detailed project planning</li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.2. Third Party Inspection at Project Site</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Third Party Inspection at Project Site",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, we are dedicated to ensuring the highest standards of quality and safety across your renewable energy projects. We deploy specified personnel to project sites to ensure the project meets quality, safety and compliance requirements.</p>
                     <ul className="service-list">
                         <li>Site quality control and assurance</li>
@@ -49,12 +71,13 @@ const REConsulting = () => {
                         <li>WTG and BoP audit</li>
                         <li>Asset Inspection and audit</li>
                     </ul>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.3. Material Inspection at Vendor Premise</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Material Inspection at Vendor Premise",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, ensuring consistent quality demands specialist inspection, monitoring, expedite and testing. RE4C vendor inspection and surveillance assures Quality, safety, compliance and monitors manufacturing processes, while our expediting services helps to meet overall project timeline and budget.</p>
                     <h3 className="sub-section-title">Vendor Inspection Stages:</h3>
                     <ul className="service-list">
@@ -65,12 +88,13 @@ const REConsulting = () => {
                         <li>Prototype testing</li>
                         <li>Drone Inspection</li>
                     </ul>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.4. Construction Management</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Construction Management",
+            content: (
+                <>
                     <p className="intro-text">RE4C conducts overall construction management to assure quality and safety work execution by ensuring procedure, standards and compliances, while we expedite timely delivery of materials, proper materials handling and storage, timely work completion.</p>
                     <h3 className="sub-section-title">Site Project Construction Stages:</h3>
                     <ul className="service-list">
@@ -94,12 +118,13 @@ const REConsulting = () => {
                             <li>Accurate and timely reporting</li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.5. Owner's Engineer Services</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Owner's Engineer Services",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, we serve as an independent representative of project owners and lenders, providing essential support throughout the entire project lifecycle. Our commitment to delivering high-quality services ensures project meets all relevant Indian and international standards, significantly reducing the risk of liabilities and addressing potential quality and safety issues.</p>
                     <div className="sub-section">
                         <h3 className="sub-section-title">What You Get:</h3>
@@ -123,12 +148,13 @@ const REConsulting = () => {
                             <li>OEMs</li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.6. Project Management Consultancy (PMC)</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Project Management Consultancy (PMC)",
+            content: (
+                <>
                     <p className="intro-text">Offering comprehensive project management consultancy services which are designed to ensure successful project delivery. Our expert team of professionals deliver end to end project support, from planning, design and engineering to final execution and handover.</p>
                     <div className="sub-section">
                         <h3 className="sub-section-title">Our PMC Services Include:</h3>
@@ -155,12 +181,13 @@ const REConsulting = () => {
                             <li>Expert operational training</li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.7. Detailed Project Report (DPR)</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Detailed Project Report (DPR)",
+            content: (
+                <>
                     <p className="intro-text">We offer comprehensive detailed project report (DPR) services that provides through roadmap of renewable energy project, while ensuring every aspect of project planned from project initial concept till completion, ensuring all technical, financial and regulatory requirements are met.</p>
                     <div className="sub-section">
                         <h3 className="sub-section-title">Our DPR Services Include:</h3>
@@ -174,12 +201,13 @@ const REConsulting = () => {
                             <li><strong>Risk Assessment and Mitigation Plans</strong></li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.8. Technical Due Diligence (TDD) and Technical Evaluation and Verification Report (TEVR)</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Technical Due Diligence (TDD) and Technical Evaluation and Verification Report (TEVR)",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, we provide comprehensive TDD and TEVR services and accessing the feasibility, risk and overall quality of projects to make the informed decisions to the stakeholders to access projects are both technically and financially viable.</p>
                     <div className="sub-section">
                         <h3 className="sub-section-title">Our TDD and TEVR Services Include:</h3>
@@ -203,12 +231,13 @@ const REConsulting = () => {
                             <li>Regulatory compliance confidence</li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.9. Lender's Independent Engineer (LIE)</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Lender's Independent Engineer (LIE)",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, we offer lender's specialized technical advisory services to provide overall project evaluations to make the informed decision to lenders and financial institutions. We are protecting lenders and financial institutions investments, identify and mitigation of risk through our analysis of project's technical, financial and regulatory aspects.</p>
                     <div className="sub-section">
                         <h3 className="sub-section-title">Our LIE/LTA Services Include:</h3>
@@ -230,15 +259,39 @@ const REConsulting = () => {
                             <li>Support across the project life cycle</li>
                         </ul>
                     </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <h2 className="section-title">1.10. Drone Inspection Services</h2>
-                <div className="section-content">
+                </>
+            )
+        },
+        {
+            title: "Drone Inspection Services",
+            content: (
+                <>
                     <p className="intro-text">At RE4C, we provide high resolution imaginary and precise data and conduct comprehensive inspection for renewable energy solar, wind and hybrid projects, while ensuring and reporting work execution met as per approved documents.</p>
+                </>
+            )
+        }
+    ];
+
+    return (
+        <div className="re-consulting-container">
+            <h1 className="main-title">RE Consulting Services</h1>
+
+            {sections.map((section, index) => (
+                <div key={index} className="section-wrapper">
+                    <section 
+                        className="section"
+                        onClick={() => toggleSection(index)}
+                        tabIndex={0}
+                        role="button"
+                        aria-expanded={activeSection === index}
+                    >
+                        <h2 className="section-title">{section.title}</h2>
+                        <div className={`section-content ${activeSection === index ? 'active' : ''}`}>
+                            {section.content}
+                        </div>
+                    </section>
                 </div>
-            </section>
+            ))}
         </div>
     );
 };
