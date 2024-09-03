@@ -1,8 +1,8 @@
-.testimonials-container {
+.projects-container {
     padding: 2rem 0;
     overflow: hidden;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 80px auto 0;
 }
 
 .partners-heading {
@@ -65,27 +65,132 @@
     }
 }
 
-.logo-slider {
-    display: flex;
-    animation: slide 30s linear infinite;
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
 }
 
-.logo-slider img {
-    height: 50px;
-    margin: 0 20px;
+.partner-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
+.partner-card:hover {
+    transform: translateY(-5px);
+}
+
+.partner-card img {
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.partner-card h3 {
+    font-size: 1.2rem;
+    color: #0056b3;
+    margin-bottom: 0.5rem;
+}
+
+.partner-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.projects-container {
+    padding: 2rem 1rem;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 80px auto 0;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.partner-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.partner-card img {
+    max-width: 100%;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 1024px) {
+    .partners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
+    .projects-container {
+        margin-top: 60px;
+        padding: 1.5rem 0.5rem;
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
+
     .partners-text {
         font-size: 2.5rem;
     }
+
+    .company-info {
+        font-size: 1rem;
+    }
+
+    .partner-card {
+        padding: 1rem;
+    }
+
+    .partner-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .partner-card p {
+        font-size: 0.8rem;
+    }
 }
+
+@media (max-width: 480px) {
+    .partners-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+    }
+
+    .partners-text {
+        font-size: 2rem;
+    }
+
+    .company-info {
+        font-size: 0.9rem;
+    }
+
+    .partner-card h3 {
+        font-size: 1rem;
+    }
+
+    .partner-card p {
+        font-size: 0.75rem;
+    }
+}
+
