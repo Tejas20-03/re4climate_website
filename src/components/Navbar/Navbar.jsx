@@ -51,6 +51,7 @@ const HNavbar = () => {
                 Nearshore/Offshore
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="/projects">Projects</Nav.Link>
             <Nav.Link href="/careers">Careers</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>

@@ -21,6 +21,7 @@ import GreenHydrogen from "./components/SectorsPages/GreenHydrogen/GreenHydrogen
 import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
 import REConsulting from "./components/Services/REConsulting/REConsulting";
 import { ProjectExecution } from "./components/Services/ProjectExecution/ProjectExecution";
+import Projects from "./pages/Projects/Projects";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ function App() {
     { path: "/services/re-consulting", element: <REConsulting /> },
     { path: "/services/project-execution", element: <ProjectExecution /> },
     { path: "/careers", element: <Maintenance /> },
+    { path: "/projects", element: <Projects /> },
   ];
 
   return (

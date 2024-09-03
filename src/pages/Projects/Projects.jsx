@@ -19,7 +19,8 @@ import insolare from "../../assets/clients/insolare.webp";
 import juniper from "../../assets/clients/juniper.png";
 import o2Power from "../../assets/clients/o2Power.png";
 
-const Testimonial = () => {
+const Projects = () => {
+    
     const partnerLogos = [
         acciona,
         avaada,
@@ -60,6 +61,6 @@ const Testimonial = () => {
             </div>
         </div>
     );
-};
+}
 
-export default Testimonial;
+export default Projects;
