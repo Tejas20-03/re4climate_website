@@ -1,19 +1,20 @@
-.logo {
-  height: 60px;
-  transition: height 0.3s ease;
+.custom-navbar {
+  transition: all 0.3s ease;
+  padding: 15px 0;
 }
 
-.custom-navbar {
-  transition: background-color 0.3s ease;
-  padding: 10px 0;
+.logo {
+  height: 50px;
+  transition: all 0.3s ease;
 }
 
 .custom-navbar .navbar-brand,
 .custom-navbar .navbar-nav .nav-link {
   color: white !important;
   font-size: 16px;
+  font-weight: 500;
   text-transform: uppercase;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
   transition: all 0.3s ease;
 }
 
@@ -21,56 +22,24 @@
   padding: 10px 15px;
   margin: 0 5px;
   border-radius: 5px;
-}
-
-.custom-navbar .navbar-nav .nav-link:hover,
-.custom-navbar .navbar-nav .nav-link:focus {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.custom-navbar .navbar-nav .dropdown-menu {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  border: none;
-  border-radius: 0 0 8px 8px;
-  padding: 10px 0;
-  margin-top: 0;
-}
-
-.custom-navbar .navbar-nav .dropdown-item {
-  color: #333;
-  transition: all 0.3s ease;
-  padding: 10px 20px;
   position: relative;
 }
 
-.custom-navbar .navbar-nav .dropdown-item:hover,
-.custom-navbar .navbar-nav .dropdown-item:focus {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: #000;
-  padding-left: 25px;
-}
-
-.custom-navbar .navbar-nav .dropdown-item::before {
-  content: '▹';
+.custom-navbar .navbar-nav .nav-link::after {
+  content: '';
   position: absolute;
-  left: 10px;
-  opacity: 0;
-  transition: opacity 0.3s ease, left 0.3s ease;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
 }
 
-.custom-navbar .navbar-nav .dropdown-item:hover::before {
-  opacity: 1;
-  left: 15px;
-}
-
-.custom-navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.custom-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.custom-navbar .navbar-nav .nav-link:hover::after,
+.custom-navbar .navbar-nav .nav-link:focus::after {
+  width: 100%;
+  left: 0;
 }
 
 .custom-navbar .navbar-nav .dropdown-menu {
@@ -106,63 +75,40 @@
 
 .custom-navbar .navbar-nav .dropdown-item:hover::before {
   opacity: 1;
-  left: 15px;
+  left: 10px;
+}
+
+.custom-navbar .navbar-nav .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+  transition: transform 0.3s ease;
+}
+
+/* .custom-navbar .navbar-nav .dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+} */
+
+.custom-navbar .navbar-nav .dropdown-menu {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (min-width: 992px) {
-  .custom-navbar .nav-item.dropdown:hover .dropdown-menu {
-    display: block;
-    animation: fadeInDown 0.3s ease;
-  }
-
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-
-@media (max-width: 991.98px) {
-  .custom-navbar .navbar-nav .dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    box-shadow: none;
-  }
-
-  .custom-navbar .navbar-nav .dropdown-item {
-    color: white;
-    padding: 10px 20px;
-  }
-
-  .custom-navbar .navbar-nav .dropdown-item:hover,
-  .custom-navbar .navbar-nav .dropdown-item:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-}
-
-@media (min-width: 992px) {
-  .custom-navbar .navbar-nav .nav-link:not(:last-child) {
-    position: relative;
-  }
-
-  .custom-navbar .navbar-nav .nav-link:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: -5px;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 20px;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
-
   .custom-navbar .nav-item.dropdown:hover .dropdown-menu {
     display: block;
     animation: fadeInDown 0.3s ease;
@@ -195,17 +141,6 @@
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
     box-shadow: none;
-  }
-
-  .custom-navbar .navbar-nav .dropdown-item {
-    color: white;
-    padding: 10px 20px;
-  }
-
-  .custom-navbar .navbar-nav .dropdown-item:hover,
-  .custom-navbar .navbar-nav .dropdown-item:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
   }
 
   .logo {

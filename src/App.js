@@ -1,10 +1,12 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PreLoader from "./components/PreLoader/PreLoader";
 import HNavbar from "./components/Navbar/Navbar";
 import SideContact from "./components/SideContact/SideContact";
 import Chatbot from "./components/Chatbot/Chatbot";
 import Footer from "./components/Footer/Footer";
+
+import { Helmet } from 'react-helmet'
 
 // Import page components
 import HomePage from "./pages/HomePage/HomePage";
@@ -23,17 +25,22 @@ import REConsulting from "./components/Services/REConsulting/REConsulting";
 import { ProjectExecution } from "./components/Services/ProjectExecution/ProjectExecution";
 import Projects from "./pages/Projects/Projects";
 
-function App() {
+function AppContent() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   // Simulate loading time
-  useEffect(() => { 
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 4000);
+  useEffect(() => {
+    if (location.pathname === '/') {
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    } else {
+      setLoading(false);
+    }
+  }, [location]);
 
   const routes = [
     { path: "/", element: <HomePage /> },
@@ -51,25 +58,35 @@ function App() {
     { path: "/projects", element: <Projects /> },
   ];
 
+  if (loading && location.pathname === '/') {
+    return <PreLoader />;
+  }
+
   return (
     <>
-      {loading ? (
-        <PreLoader />
-      ) : (
-        <BrowserRouter>
-          <HNavbar />
-          <Routes>
-            {routes.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Routes>
-          <SideContact />
-          <Chatbot />
-          <Footer />
-        </BrowserRouter>
-      )}
+      <Helmet>
+        <title>RE4Climate | Renewable Energy Solutions</title>
+        <meta name="description" content="RE4Climate offers expert renewable energy consulting services for solar, wind, hybrid energy, and more. Sustainable solutions for a greener future." />
+      </Helmet>
+      <HNavbar />
+      <Routes>
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
+      </Routes>
+      <SideContact />
+      <Chatbot />
+      <Footer />
     </>
   );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  )
 }
 
 export default App;
