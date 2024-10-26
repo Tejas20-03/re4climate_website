@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import image1 from "../../assets/image1.jpg";
 import image2 from "../../assets/image2.jpg";
 import image3 from "../../assets/image5.jpg";
@@ -22,32 +23,41 @@ function About() {
             <Carousel.Item>
               <img className="d-block w-100" src={image1} alt="First slide" />
               <Carousel.Caption>
-                <h3>Wind Energy</h3>
+                <Link to="/wind-energy" style={{ color: 'white', textDecoration: 'none' }}>
+                  <h3>Wind Energy</h3>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={image2} alt="First slide" />
               <Carousel.Caption>
-                <h3>Solar Energy</h3>
+                <Link to="/solar-energy" style={{ color: 'white', textDecoration: 'none' }}>
+                  <h3>Solar Energy</h3>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={image3} alt="First slide" />
               <Carousel.Caption>
-                <h3>Hybrid Energy</h3>
+                <Link to="/hybrid-energy" style={{ color: 'white', textDecoration: 'none' }}>
+                  <h3>Hybrid Energy</h3>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
               <img className="d-block w-100" src={image4} alt="First slide" />
               <Carousel.Caption>
-                <h3>BESS</h3>
+                <Link to="/bess" style={{ color: 'white', textDecoration: 'none' }}>
+                  <h3>BESS</h3>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
-
             <Carousel.Item>
               <img className="d-block w-100" src={image5} alt="First slide" />
               <Carousel.Caption>
-                <h3>Green Hydrogen</h3>
+                <Link to="/green-hydrogen" style={{ color: 'white', textDecoration: 'none' }}>
+                  <h3>Green Hydrogen</h3>
+                </Link>
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>

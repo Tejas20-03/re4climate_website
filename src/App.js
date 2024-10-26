@@ -5,7 +5,6 @@ import HNavbar from "./components/Navbar/Navbar";
 import SideContact from "./components/SideContact/SideContact";
 import Chatbot from "./components/Chatbot/Chatbot";
 import Footer from "./components/Footer/Footer";
-
 import { Helmet } from 'react-helmet'
 
 // Import page components
@@ -25,11 +24,20 @@ import REConsulting from "./components/Services/REConsulting/REConsulting";
 import { ProjectExecution } from "./components/Services/ProjectExecution/ProjectExecution";
 import Projects from "./pages/Projects/Projects";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function AppContent() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
-  // Simulate loading time
   useEffect(() => {
     if (location.pathname === '/') {
       const timer = setTimeout(() => {
@@ -68,6 +76,7 @@ function AppContent() {
         <title>RE4Climate | Renewable Energy Solutions</title>
         <meta name="description" content="RE4Climate offers expert renewable energy consulting services for solar, wind, hybrid energy, and more. Sustainable solutions for a greener future." />
       </Helmet>
+      <ScrollToTop />
       <HNavbar />
       <Routes>
         {routes.map((route, index) => (

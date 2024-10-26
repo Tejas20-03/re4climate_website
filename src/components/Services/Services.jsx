@@ -10,7 +10,7 @@ function ServicesSection() {
       <Row className="mb-5">
         <Col xs={12}>
           <h2 className="sectors-heading">
-            <span className="sectors-text">Sectors</span>
+            <span className="sectors-text">Our Services</span>
           </h2>
         </Col>
       </Row>
@@ -28,7 +28,7 @@ function ServicesSection() {
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-description">{service.description}</p>
                 <Link to={service.moreInfoLink} className="btn btn-primary">
-                  Read more
+                  Learn more
                 </Link>
               </div>
             </div>
