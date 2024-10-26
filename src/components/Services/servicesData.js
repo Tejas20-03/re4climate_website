@@ -16,13 +16,13 @@ export const services = [
     title: "Energy Yield Assessment (EYA)",
     description: "Comprehensive suite of Renewable Energy Assessment and Advisory services designed to maximize efficiency and profitability of energy projects. We provide detailed assessments for wind, solar and hybrid energy systems.",
     imageUrl: eya,
-    moreInfoLink: "/services/eya"
+    moreInfoLink: "/services/energy-yield-assessment"
   },
   {
     title: "Third Party Inspection",
     description: "We deploy specified personnel to project sites to ensure the project meets quality, safety and compliance requirements with real-time monitoring and quality control.",
     imageUrl: tpa,
-    moreInfoLink: "/services/inspection"
+    moreInfoLink: "/services/third-party-inspection"
   },
   {
     title: "Material Inspection",
@@ -34,43 +34,43 @@ export const services = [
     title: "Construction Management",
     description: "Overall construction management to assure quality and safety work execution by ensuring procedure, standards and compliances, with timely delivery and proper materials handling.",
     imageUrl: cm,
-    moreInfoLink: "/services/construction"
+    moreInfoLink: "/services/construction-management"
   },
   {
     title: "Owner's Engineer Services",
     description: "Independent representation for project owners and lenders, providing essential support throughout the entire project lifecycle while ensuring compliance with standards.",
     imageUrl: oes,
-    moreInfoLink: "/services/owners-engineer"
+    moreInfoLink: "/services/owners-engineer-services"
   },
   {
     title: "Project Management Consultancy",
     description: "End-to-end project support, from planning and design to final execution and handover, ensuring successful project delivery through expert management.",
     imageUrl: pmc,
-    moreInfoLink: "/services/pmc"
+    moreInfoLink: "/services/project-management-consultancy"
   },
   {
     title: "Detailed Project Report",
     description: "Comprehensive project roadmap covering technical, financial and regulatory requirements from initial concept to completion for renewable energy projects.",
     imageUrl: dpr,
-    moreInfoLink: "/services/dpr"
+    moreInfoLink: "/services/detailed-project-report"
   },
   {
     title: "Technical Due Diligence",
     description: "Comprehensive TDD and TEVR services for accessing project feasibility, risks and quality to help stakeholders make informed decisions.",
     imageUrl: tdd,
-    moreInfoLink: "/services/tdd"
+    moreInfoLink: "/services/technical-due-digilence"
   },
   {
     title: "Lender's Independent Engineer",
     description: "Specialized technical advisory services providing project evaluations to help lenders and financial institutions make informed decisions and protect investments.",
     imageUrl: lie,
-    moreInfoLink: "/services/lie"
+    moreInfoLink: "/services/lenders-independent-engineer"
   },
   {
     title: "Drone Inspection Services",
     description: "High resolution imagery and precise data collection for comprehensive inspection of renewable energy solar, wind and hybrid projects.",
     imageUrl: di,
-    moreInfoLink: "/services/drone-inspection"
+    moreInfoLink: "/services/drone-inspection-services"
   },
   {
     title: "Solar EPC",
@@ -82,6 +82,6 @@ export const services = [
     title: "Project Development Support",
     description: "Comprehensive services for Wind/Solar/Hybrid Project Development including site identification, land procurement, approvals, and BoP execution.",
     imageUrl: projectdevelopmentsupport,
-    moreInfoLink: "/services/project-development"
+    moreInfoLink: "/services/project-development-support"
   }
 ];
