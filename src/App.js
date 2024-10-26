@@ -36,6 +36,105 @@ import LendersEngineer from "./components/Services/LendersEngineer/page";
 import SolarEPC from "./components/Services/SolarEPC/page";
 import ProjectDevelopment from "./components/Services/ProjectDevelopment/page";
 
+const seoConfig = {
+  '/': {
+    title: 'RE4Climate | Renewable Energy Solutions',
+    description: 'RE4Climate offers expert renewable energy consulting services for solar, wind, hybrid energy, and more. Sustainable solutions for a greener future.'
+  },
+  '/about': {
+    title: 'About RE4Climate | Leading Renewable Energy Consultants',
+    description: 'Learn about RE4Climate\'s mission, expertise and commitment to sustainable energy solutions. Trusted renewable energy consultants with global experience.'
+  },
+  '/contact': {
+    title: 'Contact RE4Climate | Get Renewable Energy Consulting',
+    description: 'Connect with RE4Climate for expert renewable energy consulting services. Reach out for solar, wind, and sustainable energy solutions.'
+  },
+  '/wind-energy': {
+    title: 'Wind Energy Solutions & Consulting | RE4Climate',
+    description: 'Expert wind energy consulting services including feasibility studies, technical assessments, and project management for wind farms worldwide.'
+  },
+  '/solar-energy': {
+    title: 'Solar Energy Solutions & Consulting | RE4Climate',
+    description: 'Comprehensive solar energy solutions including solar PV consulting, technical due diligence, and end-to-end project management services.'
+  },
+  '/hybrid-energy': {
+    title: 'Hybrid Energy Systems & Solutions | RE4Climate',
+    description: 'Innovative hybrid energy solutions combining solar, wind and storage technologies for optimal energy efficiency and reliability.'
+  },
+  '/bess': {
+    title: 'Battery Energy Storage Systems (BESS) | RE4Climate',
+    description: 'Advanced battery energy storage solutions for renewable integration, grid stability, and power management systems.'
+  },
+  '/green-hydrogen': {
+    title: 'Green Hydrogen Solutions & Consulting | RE4Climate',
+    description: 'Expert green hydrogen consulting and implementation services for clean energy production, storage and sustainable future.'
+  },
+  '/nearshore-offshore': {
+    title: 'Nearshore & Offshore Wind Solutions | RE4Climate',
+    description: 'Specialized consulting services for nearshore and offshore wind energy projects, from feasibility to implementation.'
+  },
+  '/services/re-consulting': {
+    title: 'Renewable Energy Consulting Services | RE4Climate',
+    description: 'Professional renewable energy consulting services helping businesses transition to sustainable energy solutions.'
+  },
+  '/services/project-execution': {
+    title: 'Renewable Energy Project Execution | RE4Climate',
+    description: 'End-to-end renewable energy project execution services ensuring efficient implementation and optimal results.'
+  },
+  '/services/energy-yield-assessment': {
+    title: 'Energy Yield Assessment Services | RE4Climate',
+    description: 'Accurate energy yield assessments for solar, wind and hybrid renewable energy projects.'
+  },
+  '/services/third-party-inspection': {
+    title: 'Third Party Inspection Services | RE4Climate',
+    description: 'Independent third-party inspection services for quality assurance in renewable energy projects.'
+  },
+  '/services/material-inspection': {
+    title: 'Material Inspection Services | RE4Climate',
+    description: 'Comprehensive material inspection services ensuring quality and compliance in renewable energy projects.'
+  },
+  '/services/construction-management': {
+    title: 'Construction Management Services | RE4Climate',
+    description: 'Expert construction management services for renewable energy projects, ensuring timely and quality execution.'
+  },
+  '/services/owners-engineer-services': {
+    title: 'Owner\'s Engineer Services | RE4Climate',
+    description: 'Professional owner\'s engineer services representing client interests throughout renewable energy project lifecycle.'
+  },
+  '/services/project-management-consultancy': {
+    title: 'Project Management Consultancy | RE4Climate',
+    description: 'Comprehensive project management consultancy services for renewable energy projects worldwide.'
+  },
+  '/services/detailed-project-report': {
+    title: 'Detailed Project Reports | RE4Climate',
+    description: 'In-depth project reports and analysis for renewable energy initiatives and developments.'
+  },
+  '/services/technical-due-digilence': {
+    title: 'Technical Due Diligence Services | RE4Climate',
+    description: 'Thorough technical due diligence services for renewable energy projects and investments.'
+  },
+  '/services/lenders-independent-engineer': {
+    title: 'Lender\'s Independent Engineer Services | RE4Climate',
+    description: 'Independent engineering services for lenders in renewable energy project financing.'
+  },
+  '/services/drone-inspection-services': {
+    title: 'Drone Inspection Services | RE4Climate',
+    description: 'Advanced drone inspection services for renewable energy installations and maintenance.'
+  },
+  '/services/solar-epc': {
+    title: 'Solar EPC Services | RE4Climate',
+    description: 'Complete solar EPC solutions including engineering, procurement, and construction services.'
+  },
+  '/services/project-development-support': {
+    title: 'Project Development Support | RE4Climate',
+    description: 'Comprehensive project development support services for renewable energy initiatives.'
+  },
+  '/projects': {
+    title: 'Our Projects | RE4Climate Success Stories',
+    description: 'Explore RE4Climate\'s portfolio of successful renewable energy projects and implementations worldwide.'
+  }
+};
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -49,6 +148,11 @@ function ScrollToTop() {
 function AppContent() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+
+  const currentSEO = seoConfig[location.pathname] || {
+    title: 'RE4Climate | Renewable Energy Solutions',
+    description: 'Professional renewable energy consulting services for sustainable energy solutions.'
+  };
 
   useEffect(() => {
     if (location.pathname === '/') {
@@ -97,8 +201,18 @@ function AppContent() {
   return (
     <>
       <Helmet>
-        <title>RE4Climate | Renewable Energy Solutions</title>
-        <meta name="description" content="RE4Climate offers expert renewable energy consulting services for solar, wind, hybrid energy, and more. Sustainable solutions for a greener future." />
+        <title>{currentSEO.title}</title>
+        <meta name="description" content={currentSEO.description} />
+        <meta property="og:title" content={currentSEO.title} />
+        <meta property="og:description" content={currentSEO.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://re4climate.com${location.pathname}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={currentSEO.title} />
+        <meta name="twitter:description" content={currentSEO.description} />
+        <link rel="canonical" href={`https://re4climate.com${location.pathname}`} />
+        <meta name="robots" content="index, follow" />
+        <html lang="en" />
       </Helmet>
       <ScrollToTop />
       <HNavbar />
