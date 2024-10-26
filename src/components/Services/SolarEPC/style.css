@@ -1,0 +1,143 @@
+.sepc-section {
+    width: 100%;
+  }
+  
+  .sepc-section .parallax-1,
+  .sepc-section .parallax-2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .sepc-section .parallax-1 .parallax-inner h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 3px;
+  }
+  
+  .sepc-section .sepc-banner {
+    background: url("../../../assets/solarepc.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sepc-section .parallax-1 .parallax-inner,
+  .sepc-section .parallax-2 .parallax-inner {
+    padding: 10% 0;
+  }
+  
+  .sepc-content {
+    padding: 40px 0;
+  }
+  
+  .sepc-content p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+  }
+  
+  .sepc-heading {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+  }
+  
+  .sepc-subheading {
+    font-size: 24px;
+    color: #555;
+    margin: 30px 50px 15px;
+    font-weight: 500;
+  }
+  
+  .sepc-list {
+    margin: 0 70px 40px;
+    color: #555;
+    line-height: 30px;
+  }
+  
+  .sepc-list li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .sepc-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+  
+  @media (max-width: 1200px) {
+    .sepc-section .parallax-1 .parallax-inner h1 {
+      font-size: 90px;
+    }
+    .sepc-content p {
+      margin: 0 30px 30px;
+    }
+    .sepc-list {
+      margin: 0 50px 30px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .sepc-section .parallax-1 .parallax-inner h1 {
+      font-size: 70px;
+    }
+    .sepc-content p,
+    .sepc-list li {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .sepc-heading {
+      font-size: 28px;
+    }
+    .sepc-subheading {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sepc-section .parallax-1 .parallax-inner h1 {
+      font-size: 50px;
+    }
+    .sepc-heading {
+      font-size: 24px;
+    }
+    .sepc-subheading {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .sepc-section .parallax-1 .parallax-inner h1 {
+      font-size: 40px;
+    }
+    .sepc-content p,
+    .sepc-list li {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .sepc-heading {
+      font-size: 20px;
+    }
+    .sepc-subheading {
+      font-size: 16px;
+    }
+    .sepc-section .parallax-1 .parallax-inner,
+    .sepc-section .parallax-2 .parallax-inner {
+      padding: 20% 0;
+    }
+  }
+  

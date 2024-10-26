@@ -1,0 +1,126 @@
+.dpr-section {
+    width: 100%;
+  }
+  
+  .dpr-section .parallax-1,
+  .dpr-section .parallax-2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dpr-section .parallax-1 .parallax-inner h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 3px;
+  }
+  
+  .dpr-section .dpr-banner {
+    background: url("../../../assets/detailedprojectreport.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dpr-section .parallax-1 .parallax-inner,
+  .dpr-section .parallax-2 .parallax-inner {
+    padding: 10% 0;
+  }
+  
+  .dpr-content {
+    padding: 40px 0;
+  }
+  
+  .dpr-content p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+  }
+  
+  .dpr-heading {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+  }
+  
+  .dpr-subheading {
+    font-size: 24px;
+    color: #555;
+    margin: 30px 50px 15px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 1200px) {
+    .dpr-section .parallax-1 .parallax-inner h1 {
+      font-size: 90px;
+    }
+    .dpr-content p {
+      margin: 0 30px 30px;
+    }
+    .dpr-subheading {
+      margin: 25px 30px 15px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .dpr-section .parallax-1 .parallax-inner h1 {
+      font-size: 70px;
+    }
+    .dpr-content p {
+      margin: 0 20px 20px;
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .dpr-heading {
+      font-size: 28px;
+    }
+    .dpr-subheading {
+      font-size: 20px;
+      margin: 20px 20px 10px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dpr-section .parallax-1 .parallax-inner h1 {
+      font-size: 50px;
+    }
+    .dpr-heading {
+      font-size: 24px;
+    }
+    .dpr-subheading {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .dpr-section .parallax-1 .parallax-inner h1 {
+      font-size: 40px;
+    }
+    .dpr-content p {
+      margin: 0 10px 10px;
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .dpr-heading {
+      font-size: 20px;
+    }
+    .dpr-subheading {
+      font-size: 16px;
+      margin: 15px 10px 10px;
+    }
+    .dpr-section .parallax-1 .parallax-inner,
+    .dpr-section .parallax-2 .parallax-inner {
+      padding: 20% 0;
+    }
+  }
+  

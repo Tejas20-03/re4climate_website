@@ -1,0 +1,124 @@
+.serviceSection .parallax-1 .parallax-inner h1,
+.serviceSection .parallax-2 .parallax-inner h1 {
+  font-size: 120px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
+  text-shadow: 0 0 3px;
+}
+
+.serviceSection .parallax-1 .service {
+  background: url("../../../assets/constructionmanagement.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.serviceSection .parallax-1 .parallax-inner,
+.serviceSection .parallax-2 .parallax-inner {
+  padding: 10% 0;
+}
+
+.serviceSection .parallax-2 .service {
+  background: url("../../../assets/constructionmanagement.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.serviceSection p {
+  font-size: 16px;
+  color: #555;
+  text-align: justify;
+  line-height: 30px;
+  margin: 0 50px 40px;
+}
+
+.serviceSection h2 {
+  font-size: 32px;
+  color: #555;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 40px 0 20px;
+}
+
+.serviceSection ul {
+  margin: 0 70px 40px;
+  color: #555;
+  line-height: 30px;
+  list-style-type: disc;
+}
+
+.serviceSection ul li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .serviceSection .parallax-1 .parallax-inner h1,
+  .serviceSection .parallax-2 .parallax-inner h1 {
+    font-size: 90px;
+  }
+  .serviceSection p {
+    margin: 0 30px 30px;
+  }
+  .serviceSection ul {
+    margin: 0 50px 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .serviceSection .parallax-1 .parallax-inner h1,
+  .serviceSection .parallax-2 .parallax-inner h1 {
+    font-size: 70px;
+  }
+  .serviceSection p {
+    margin: 0 20px 20px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+  .serviceSection h2 {
+    font-size: 28px;
+  }
+  .serviceSection ul {
+    margin: 0 40px 20px;
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceSection .parallax-1 .parallax-inner h1,
+  .serviceSection .parallax-2 .parallax-inner h1 {
+    font-size: 50px;
+  }
+  .serviceSection h2 {
+    font-size: 24px;
+  }
+  .serviceSection ul {
+    margin: 0 30px 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .serviceSection .parallax-1 .parallax-inner h1,
+  .serviceSection .parallax-2 .parallax-inner h1 {
+    font-size: 40px;
+  }
+  .serviceSection p {
+    margin: 0 10px 10px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .serviceSection h2 {
+    font-size: 20px;
+  }
+  .serviceSection ul {
+    margin: 0 20px 10px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .serviceSection .parallax-1 .parallax-inner,
+  .serviceSection .parallax-2 .parallax-inner {
+    padding: 20% 0;
+  }
+}

@@ -1,0 +1,127 @@
+.pd-section {
+    width: 100%;
+  }
+  
+  .pd-section .parallax-1,
+  .pd-section .parallax-2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pd-section .parallax-1 .parallax-inner h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 3px;
+  }
+  
+  .pd-section .pd-banner {
+    background: url("../../../assets/projectSupport.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .pd-section .parallax-1 .parallax-inner,
+  .pd-section .parallax-2 .parallax-inner {
+    padding: 10% 0;
+  }
+  
+  .pd-content {
+    padding: 40px 0;
+  }
+  
+  .pd-content p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+  }
+  
+  .pd-heading {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+  }
+  
+  .pd-list {
+    margin: 0 70px 40px;
+    color: #555;
+    line-height: 30px;
+  }
+  
+  .pd-list li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .pd-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+  
+  @media (max-width: 1200px) {
+    .pd-section .parallax-1 .parallax-inner h1 {
+      font-size: 90px;
+    }
+    .pd-content p {
+      margin: 0 30px 30px;
+    }
+    .pd-list {
+      margin: 0 50px 30px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .pd-section .parallax-1 .parallax-inner h1 {
+      font-size: 70px;
+    }
+    .pd-content p,
+    .pd-list li {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .pd-heading {
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .pd-section .parallax-1 .parallax-inner h1 {
+      font-size: 50px;
+    }
+    .pd-heading {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .pd-section .parallax-1 .parallax-inner h1 {
+      font-size: 40px;
+    }
+    .pd-content p,
+    .pd-list li {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .pd-heading {
+      font-size: 20px;
+    }
+    .pd-section .parallax-1 .parallax-inner,
+    .pd-section .parallax-2 .parallax-inner {
+      padding: 20% 0;
+    }
+  }
+  

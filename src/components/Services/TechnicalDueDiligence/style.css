@@ -1,0 +1,143 @@
+.tdd-section {
+    width: 100%;
+  }
+  
+  .tdd-section .parallax-1,
+  .tdd-section .parallax-2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .tdd-section .parallax-1 .parallax-inner h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 3px;
+  }
+  
+  .tdd-section .tdd-banner {
+    background: url("../../../assets/tdd.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .tdd-section .parallax-1 .parallax-inner,
+  .tdd-section .parallax-2 .parallax-inner {
+    padding: 10% 0;
+  }
+  
+  .tdd-content {
+    padding: 40px 0;
+  }
+  
+  .tdd-content p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+  }
+  
+  .tdd-heading {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+  }
+  
+  .tdd-subheading {
+    font-size: 24px;
+    color: #555;
+    margin: 30px 50px 15px;
+    font-weight: 500;
+  }
+  
+  .tdd-list {
+    margin: 0 70px 40px;
+    color: #555;
+    line-height: 30px;
+  }
+  
+  .tdd-list li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .tdd-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+  }
+  
+  @media (max-width: 1200px) {
+    .tdd-section .parallax-1 .parallax-inner h1 {
+      font-size: 90px;
+    }
+    .tdd-content p {
+      margin: 0 30px 30px;
+    }
+    .tdd-list {
+      margin: 0 50px 30px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .tdd-section .parallax-1 .parallax-inner h1 {
+      font-size: 70px;
+    }
+    .tdd-content p,
+    .tdd-list li {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .tdd-heading {
+      font-size: 28px;
+    }
+    .tdd-subheading {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tdd-section .parallax-1 .parallax-inner h1 {
+      font-size: 50px;
+    }
+    .tdd-heading {
+      font-size: 24px;
+    }
+    .tdd-subheading {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .tdd-section .parallax-1 .parallax-inner h1 {
+      font-size: 40px;
+    }
+    .tdd-content p,
+    .tdd-list li {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .tdd-heading {
+      font-size: 20px;
+    }
+    .tdd-subheading {
+      font-size: 16px;
+    }
+    .tdd-section .parallax-1 .parallax-inner,
+    .tdd-section .parallax-2 .parallax-inner {
+      padding: 20% 0;
+    }
+  }
+  

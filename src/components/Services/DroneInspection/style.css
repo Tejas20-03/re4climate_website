@@ -1,0 +1,135 @@
+.drone-section {
+    width: 100%;
+  }
+  
+  .drone-section .parallax-1,
+  .drone-section .parallax-2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .drone-section .parallax-1 .parallax-inner h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 3px;
+  }
+  
+  .drone-section .drone-banner {
+    background: url("../../../assets/drone.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .drone-section .parallax-1 .parallax-inner,
+  .drone-section .parallax-2 .parallax-inner {
+    padding: 10% 0;
+  }
+  
+  .drone-content {
+    padding: 40px 0;
+  }
+  
+  .drone-content p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+  }
+  
+  .drone-heading {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+  }
+  
+  .drone-subheading {
+    font-size: 24px;
+    color: #555;
+    margin: 30px 50px 15px;
+    font-weight: 500;
+  }
+  
+  .drone-list {
+    margin: 0 70px 40px;
+    color: #555;
+    line-height: 30px;
+  }
+  
+  .drone-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 1200px) {
+    .drone-section .parallax-1 .parallax-inner h1 {
+      font-size: 90px;
+    }
+    .drone-content p {
+      margin: 0 30px 30px;
+    }
+    .drone-list {
+      margin: 0 50px 30px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .drone-section .parallax-1 .parallax-inner h1 {
+      font-size: 70px;
+    }
+    .drone-content p,
+    .drone-list li {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .drone-heading {
+      font-size: 28px;
+    }
+    .drone-subheading {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .drone-section .parallax-1 .parallax-inner h1 {
+      font-size: 50px;
+    }
+    .drone-heading {
+      font-size: 24px;
+    }
+    .drone-subheading {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .drone-section .parallax-1 .parallax-inner h1 {
+      font-size: 40px;
+    }
+    .drone-content p,
+    .drone-list li {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .drone-heading {
+      font-size: 20px;
+    }
+    .drone-subheading {
+      font-size: 16px;
+    }
+    .drone-section .parallax-1 .parallax-inner,
+    .drone-section .parallax-2 .parallax-inner {
+      padding: 20% 0;
+    }
+  }
+  

@@ -1,0 +1,135 @@
+.eya-section {
+    width: 100%;
+  }
+  
+  .eya-section .parallax-1,
+  .eya-section .parallax-2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .eya-section .parallax-1 .parallax-inner h1 {
+    font-size: 120px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 3px;
+  }
+  
+  .eya-section .eya-banner {
+    background: url("../../../assets/energyyeildassessment.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .eya-section .parallax-1 .parallax-inner,
+  .eya-section .parallax-2 .parallax-inner {
+    padding: 10% 0;
+  }
+  
+  .eya-content {
+    padding: 40px 0;
+  }
+  
+  .eya-content p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+    line-height: 30px;
+    margin: 0 50px 40px;
+  }
+  
+  .eya-heading {
+    font-size: 32px;
+    color: #555;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin: 40px 0 20px;
+  }
+  
+  .eya-subheading {
+    font-size: 24px;
+    color: #555;
+    margin: 30px 50px 15px;
+    font-weight: 500;
+  }
+  
+  .eya-list {
+    margin: 0 70px 40px;
+    color: #555;
+    line-height: 30px;
+  }
+  
+  .eya-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 1200px) {
+    .eya-section .parallax-1 .parallax-inner h1 {
+      font-size: 90px;
+    }
+    .eya-content p {
+      margin: 0 30px 30px;
+    }
+    .eya-list {
+      margin: 0 50px 30px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .eya-section .parallax-1 .parallax-inner h1 {
+      font-size: 70px;
+    }
+    .eya-content p,
+    .eya-list li {
+      font-size: 14px;
+      line-height: 25px;
+    }
+    .eya-heading {
+      font-size: 28px;
+    }
+    .eya-subheading {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .eya-section .parallax-1 .parallax-inner h1 {
+      font-size: 50px;
+    }
+    .eya-heading {
+      font-size: 24px;
+    }
+    .eya-subheading {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .eya-section .parallax-1 .parallax-inner h1 {
+      font-size: 40px;
+    }
+    .eya-content p,
+    .eya-list li {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    .eya-heading {
+      font-size: 20px;
+    }
+    .eya-subheading {
+      font-size: 16px;
+    }
+    .eya-section .parallax-1 .parallax-inner,
+    .eya-section .parallax-2 .parallax-inner {
+      padding: 20% 0;
+    }
+  }
+  
