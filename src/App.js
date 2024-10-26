@@ -23,6 +23,18 @@ import Nearshore from "./components/SectorsPages/Nearshore/Nearshore";
 import REConsulting from "./components/Services/REConsulting/REConsulting";
 import { ProjectExecution } from "./components/Services/ProjectExecution/ProjectExecution";
 import Projects from "./pages/Projects/Projects";
+import ConstructionManagement from "./components/Services/ConstructionManagement/page";
+import DroneInspection from "./components/Services/DroneInspection/page";
+import DetailedProjectReport from "./components/Services/DetailedProjectReport/page";
+import EnergyYieldAssessment from "./components/Services/EnergyYieldAssessment/page";
+import ThirdPartyInspection from "./components/Services/ThirdPartyInspection/page";
+import MaterialInspection from "./components/Services/MaterialInspection/page";
+import OwnersEngineer from "./components/Services/OwnersEngineer/page";
+import ProjectManagement from "./components/Services/ProjectManagement/page";
+import TechnicalDueDigilence from "./components/Services/TechnicalDueDiligence/page";
+import LendersEngineer from "./components/Services/LendersEngineer/page";
+import SolarEPC from "./components/Services/SolarEPC/page";
+import ProjectDevelopment from "./components/Services/ProjectDevelopment/page";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -62,18 +74,18 @@ function AppContent() {
     { path: "/nearshore-offshore", element: <Nearshore /> },
     { path: "/services/re-consulting", element: <REConsulting /> },
     { path: "/services/project-execution", element: <ProjectExecution /> },
-    { path: "/services/energy-yield-assessment", element: <Maintenance /> },
-    { path: "/services/third-party-inspection", element: <Maintenance /> },
-    { path: "/services/material-inspection", element: <Maintenance /> },
-    { path: "/services/construction-management", element: <Maintenance /> },
-    { path: "/services/owners-engineer-services", element: <Maintenance /> },
-    { path: "/services/project-management-consultancy", element: <Maintenance /> },
-    { path: "/services/detailed-project-report", element: <Maintenance /> },
-    { path: "/services/technical-due-digilence", element: <Maintenance /> },
-    { path: "/services/lenders-independent-engineer", element: <Maintenance /> },
-    { path: "/services/drone-inspection-services", element: <Maintenance /> },
-    { path: "/services/solar-epc", element: <Maintenance /> },
-    { path: "/services/project-development-support", element: <Maintenance /> },
+    { path: "/services/energy-yield-assessment", element: <EnergyYieldAssessment /> },
+    { path: "/services/third-party-inspection", element: <ThirdPartyInspection /> },
+    { path: "/services/material-inspection", element: <MaterialInspection /> },
+    { path: "/services/construction-management", element: <ConstructionManagement /> },
+    { path: "/services/owners-engineer-services", element: <OwnersEngineer /> },
+    { path: "/services/project-management-consultancy", element: <ProjectManagement /> },
+    { path: "/services/detailed-project-report", element: <DetailedProjectReport /> },
+    { path: "/services/technical-due-digilence", element: <TechnicalDueDigilence /> },
+    { path: "/services/lenders-independent-engineer", element: <LendersEngineer /> },
+    { path: "/services/drone-inspection-services", element: <DroneInspection /> },
+    { path: "/services/solar-epc", element: <SolarEPC /> },
+    { path: "/services/project-development-support", element: <ProjectDevelopment /> },
     { path: "/careers", element: <Maintenance /> },
     { path: "/projects", element: <Projects /> },
   ];

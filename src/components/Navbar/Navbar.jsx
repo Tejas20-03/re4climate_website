@@ -43,8 +43,18 @@ const HNavbar = () => {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <NavDropdown title="Services" id="services-dropdown" renderMenuOnMount={true}>
-              <NavDropdown.Item as={Link} to="/services/re-consulting">RE Consulting Services</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/services/project-execution">Project Execution and Development Services</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/energy-yield-assessment">Energy Yield Assessment</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/third-party-inspection">Third Party Inspection</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/material-inspection">Material Inspection</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/construction-management">Construction Management</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/owners-engineer-services">Owner's Engineer Services</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/project-management-consultancy">Project Management Consultancy</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/detailed-project-report">Detailed Project Report</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/technical-due-digilence">Technical Due Diligence</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/lenders-independent-engineer">Lender's Independent Engineer</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/drone-inspection-services">Drone Inspection Services</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/solar-epc">Solar EPC</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/services/project-development-support">Project Development Support</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Sectors" id="basic-nav-dropdown" renderMenuOnMount={true}>
               <NavDropdown.Item as={Link} to="/solar-energy">Solar Energy</NavDropdown.Item>
